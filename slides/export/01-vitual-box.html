@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="VirtualBox" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>VirtualBox</title>
+  <style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">VirtualBox</h1>
+<h2 class="author">Adolfo Sanz De Diego</h2>
+<h3 class="date">Noviembre 2016</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#acerca-de"><span class="toc-section-number">1</span> Acerca de</a><ul>
+<li><a href="#autor"><span class="toc-section-number">1.1</span> Autor</a></li>
+<li><a href="#licencia"><span class="toc-section-number">1.2</span> Licencia</a></li>
+<li><a href="#fuente"><span class="toc-section-number">1.3</span> Fuente</a></li>
+</ul></li>
+<li><a href="#virtualbox"><span class="toc-section-number">2</span> VirtualBox</a><ul>
+<li><a href="#qué-es"><span class="toc-section-number">2.1</span> ¿Qué es?</a></li>
+<li><a href="#descarga"><span class="toc-section-number">2.2</span> Descarga</a></li>
+<li><a href="#instalación"><span class="toc-section-number">2.3</span> Instalación</a></li>
+</ul></li>
+<li><a href="#descargar-ubuntu"><span class="toc-section-number">3</span> Descargar Ubuntu</a><ul>
+<li><a href="#ubuntu"><span class="toc-section-number">3.1</span> Ubuntu</a></li>
+<li><a href="#enlace"><span class="toc-section-number">3.2</span> Enlace</a></li>
+<li><a href="#donativo"><span class="toc-section-number">3.3</span> Donativo</a></li>
+<li><a href="#descarga-1"><span class="toc-section-number">3.4</span> Descarga</a></li>
+</ul></li>
+<li><a href="#crear-máquina-virtual"><span class="toc-section-number">4</span> Crear Máquina Virtual</a><ul>
+<li><a href="#abrir-virtualbox"><span class="toc-section-number">4.1</span> Abrir VirtualBox</a></li>
+<li><a href="#nueva-máquina-virtual"><span class="toc-section-number">4.2</span> Nueva Máquina Virtual</a></li>
+<li><a href="#nombre-máquina-virtual"><span class="toc-section-number">4.3</span> Nombre Máquina Virtual</a></li>
+<li><a href="#memoria-máquina-virtual"><span class="toc-section-number">4.4</span> Memoria Máquina Virtual</a></li>
+<li><a href="#crear-disco-virtual"><span class="toc-section-number">4.5</span> Crear Disco Virtual</a></li>
+<li><a href="#tipo-disco-virtual"><span class="toc-section-number">4.6</span> Tipo Disco Virtual</a></li>
+<li><a href="#tipo-almacenamiento"><span class="toc-section-number">4.7</span> Tipo Almacenamiento</a></li>
+<li><a href="#ubicación-y-tamaño"><span class="toc-section-number">4.8</span> Ubicación y Tamaño</a></li>
+<li><a href="#finalizar"><span class="toc-section-number">4.9</span> Finalizar</a></li>
+<li><a href="#configurar-máquina-virtual"><span class="toc-section-number">4.10</span> Configurar Máquina Virtual</a></li>
+<li><a href="#abrir-configuración"><span class="toc-section-number">4.11</span> Abrir configuración</a></li>
+<li><a href="#configurar-almacenamiento"><span class="toc-section-number">4.12</span> Configurar almacenamiento</a></li>
+<li><a href="#seleccionar-cd-virtual"><span class="toc-section-number">4.13</span> Seleccionar CD Virtual</a></li>
+<li><a href="#buscar-archivo"><span class="toc-section-number">4.14</span> Buscar archivo</a></li>
+<li><a href="#seleccionar-iso"><span class="toc-section-number">4.15</span> Seleccionar ISO</a></li>
+<li><a href="#cerrar-configuración"><span class="toc-section-number">4.16</span> Cerrar configuración</a></li>
+<li><a href="#finalizar-1"><span class="toc-section-number">4.17</span> Finalizar</a></li>
+</ul></li>
+<li><a href="#intalar-ubuntu"><span class="toc-section-number">5</span> Intalar Ubuntu</a><ul>
+<li><a href="#iniciar-máquina-virtual"><span class="toc-section-number">5.1</span> Iniciar Máquina Virtual</a></li>
+<li><a href="#seleccionar-idioma"><span class="toc-section-number">5.2</span> Seleccionar idioma</a></li>
+<li><a href="#descagas-opcionales"><span class="toc-section-number">5.3</span> Descagas opcionales</a></li>
+<li><a href="#tipo-de-instalación"><span class="toc-section-number">5.4</span> Tipo de instalación</a></li>
+<li><a href="#adevertencia"><span class="toc-section-number">5.5</span> Adevertencia</a></li>
+<li><a href="#ubicación"><span class="toc-section-number">5.6</span> Ubicación</a></li>
+<li><a href="#teclado"><span class="toc-section-number">5.7</span> Teclado</a></li>
+<li><a href="#usuario-y-contraseña"><span class="toc-section-number">5.8</span> Usuario y contraseña</a></li>
+<li><a href="#esperar"><span class="toc-section-number">5.9</span> Esperar</a></li>
+<li><a href="#reiniciar"><span class="toc-section-number">5.10</span> Reiniciar</a></li>
+<li><a href="#pulsar-enter"><span class="toc-section-number">5.11</span> Pulsar ENTER</a></li>
+<li><a href="#cargar-ubuntu"><span class="toc-section-number">5.12</span> Cargar Ubuntu</a></li>
+<li><a href="#apagar-ubuntu"><span class="toc-section-number">5.13</span> Apagar Ubuntu</a></li>
+<li><a href="#finalizar-2"><span class="toc-section-number">5.14</span> Finalizar</a></li>
+<li><a href="#rearancar"><span class="toc-section-number">5.15</span> Rearancar</a></li>
+</ul></li>
+<li><a href="#importar-máquina-virtual"><span class="toc-section-number">6</span> Importar Máquina Virtual</a><ul>
+<li><a href="#qué-es-eso"><span class="toc-section-number">6.1</span> ¿Qué es eso?</a></li>
+<li><a href="#importar-vdi"><span class="toc-section-number">6.2</span> Importar VDI</a></li>
+<li><a href="#importar-ovf"><span class="toc-section-number">6.3</span> Importar OVF</a></li>
+<li><a href="#exportar-ovf"><span class="toc-section-number">6.4</span> Exportar OVF</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="acerca-de"><span class="header-section-number">1</span> Acerca de</h1>
+<h2 id="autor"><span class="header-section-number">1.1</span> Autor</h2>
+<ul>
+<li><strong>Adolfo Sanz De Diego</strong>
+<ul>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es/">asanzdiego.blogspot.com.es</a></li>
+<li>Correo: <a href="mailto:asanzdiego@gmail.com">asanzdiego@gmail.com</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/">slideshare.net/asanzdiego</a></li>
+</ul></li>
+</ul>
+<h2 id="licencia"><span class="header-section-number">1.2</span> Licencia</h2>
+<ul>
+<li><strong>Este obra está bajo una licencia:</strong>
+<ul>
+<li><a href="http://creativecommons.org/licenses/by-sa/3.0/es/">Creative Commons Reconocimiento-CompartirIgual 3.0</a></li>
+</ul></li>
+</ul>
+<h2 id="fuente"><span class="header-section-number">1.3</span> Fuente</h2>
+<ul>
+<li>Las slides y sus fuentes las podéis encontrar en:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-intro-linux-web-sql-2016" class="uri">https://github.com/asanzdiego/curso-intro-linux-web-sql-2016</a></li>
+</ul></li>
+</ul>
+<h1 id="virtualbox"><span class="header-section-number">2</span> VirtualBox</h1>
+<h2 id="qué-es"><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li><p>Programa de Software Libre.</p></li>
+<li><p>Permite <strong>instalar un Sistema Operativo dentro de otro</strong>.</p></li>
+</ul>
+<h2 id="descarga"><span class="header-section-number">2.2</span> Descarga</h2>
+<ul>
+<li>https://www.virtualbox.org/wiki/Downloads</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-01.png" alt="Descarga de VirtualBox" />
+</div>
+<h2 id="instalación"><span class="header-section-number">2.3</span> Instalación</h2>
+<ul>
+<li><p>Elegir la versión adecuada para el Sistema Operativo que tenemos instalado.</p></li>
+<li><p>Intalar de la forma habitual dependiendo del Sistema Operativo instalado.</p></li>
+</ul>
+<h1 id="descargar-ubuntu"><span class="header-section-number">3</span> Descargar Ubuntu</h1>
+<h2 id="ubuntu"><span class="header-section-number">3.1</span> Ubuntu</h2>
+<ul>
+<li>Ubuntu es una <strong>districución Linux</strong> muy utilizada.</li>
+</ul>
+<h2 id="enlace"><span class="header-section-number">3.2</span> Enlace</h2>
+<ul>
+<li>http://www.ubuntu.com/download/desktop</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-01.png" alt="Enlace de Ubuntu" />
+</div>
+<h2 id="donativo"><span class="header-section-number">3.3</span> Donativo</h2>
+<ul>
+<li>Al pulsar el botón &quot;Download&quot;, nos lleva a una página para realizar una donación, y si no queremos donar y continuar pulsamos en la parte inferior en &quot;<strong>Not now, take me to the download</strong>&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-02.png" alt="Donativo de Ubuntu" />
+</div>
+<h2 id="descarga-1"><span class="header-section-number">3.4</span> Descarga</h2>
+<ul>
+<li>La descarga coomenzará automáticamente, pero si no lo hiciera pulsamos sobre &quot;<strong>download now</strong>&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-03.png" alt="Descarga de Ubuntu" />
+</div>
+<h1 id="crear-máquina-virtual"><span class="header-section-number">4</span> Crear Máquina Virtual</h1>
+<h2 id="abrir-virtualbox"><span class="header-section-number">4.1</span> Abrir VirtualBox</h2>
+<ul>
+<li>Abrimos <strong>VirtualBox</strong>:</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-02.png" alt="Abrir VirtualBox" />
+</div>
+<h2 id="nueva-máquina-virtual"><span class="header-section-number">4.2</span> Nueva Máquina Virtual</h2>
+<ul>
+<li>Pulsamos sobre &quot;<strong>Nueva</strong>&quot; para añadir una nueva máquina virtual.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-03.png" alt="Nueva Máquina Virtual" />
+</div>
+<h2 id="nombre-máquina-virtual"><span class="header-section-number">4.3</span> Nombre Máquina Virtual</h2>
+<ul>
+<li>En el asistente insertamos en el nombre &quot;<strong>Ubuntu</strong>&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-04.png" alt="Nombre Máquina Virtual" />
+</div>
+<h2 id="memoria-máquina-virtual"><span class="header-section-number">4.4</span> Memoria Máquina Virtual</h2>
+<ul>
+<li>Elegimos la cantidad de <strong>memoria</strong> reservada a Ubuntu:</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-05.png" alt="Memoria Máquina Virtual" />
+</div>
+<h2 id="crear-disco-virtual"><span class="header-section-number">4.5</span> Crear Disco Virtual</h2>
+<ul>
+<li>Seleecionamos &quot;<strong>Crear disco virtual ahora</strong>&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-06.png" alt="Crear Disco Virtual" />
+</div>
+<h2 id="tipo-disco-virtual"><span class="header-section-number">4.6</span> Tipo Disco Virtual</h2>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-07.png" alt="Tipo Disco Virtual" />
+</div>
+<h2 id="tipo-almacenamiento"><span class="header-section-number">4.7</span> Tipo Almacenamiento</h2>
+<ul>
+<li>Seleccionamos &quot;<strong>Reservado dinámicamente</strong>&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-08.png" alt="Tipo Almacenamiento" />
+</div>
+<h2 id="ubicación-y-tamaño"><span class="header-section-number">4.8</span> Ubicación y Tamaño</h2>
+<ul>
+<li>Podemos seleccionar <strong>la ubicación y el tamaño</strong> del disco virtual.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-09.png" alt="Ubicación y Tamaño" />
+</div>
+<h2 id="finalizar"><span class="header-section-number">4.9</span> Finalizar</h2>
+<ul>
+<li>Si todo ha salido bien nos aparecerá la <strong>máquina recién creada</strong> en VirtualBox.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-10.png" alt="Listar Máquina Virtual" />
+</div>
+<h2 id="configurar-máquina-virtual"><span class="header-section-number">4.10</span> Configurar Máquina Virtual</h2>
+<h2 id="abrir-configuración"><span class="header-section-number">4.11</span> Abrir configuración</h2>
+<ul>
+<li>Seleccionamos máquina recién creada y pulsamos en &quot;<strong>Configuración</strong>&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-11.png" alt="Abrir configuración" />
+</div>
+<h2 id="configurar-almacenamiento"><span class="header-section-number">4.12</span> Configurar almacenamiento</h2>
+<ul>
+<li>Pulsamos sobre &quot;<strong>Almacenamiento</strong>&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-12.png" alt="Configurar almacenamiento" />
+</div>
+<h2 id="seleccionar-cd-virtual"><span class="header-section-number">4.13</span> Seleccionar CD Virtual</h2>
+<ul>
+<li>Pulsamos sobre el <strong>icono &quot;CD&quot;</strong> del cuadro &quot;Árbol de almacenamiento&quot; del árbol &quot;Controlador:IDE&quot; que aparece vacío.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-13.png" alt="Seleccionamos CD" />
+</div>
+<h2 id="buscar-archivo"><span class="header-section-number">4.14</span> Buscar archivo</h2>
+<ul>
+<li>Pulsamos en el <strong>icono &quot;CD&quot;</strong> de la parte de la derecha.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-14.png" alt="Buscar archivo" />
+</div>
+<h2 id="seleccionar-iso"><span class="header-section-number">4.15</span> Seleccionar ISO</h2>
+<ul>
+<li>Buscamos el <strong>archivo ISO de Ubuntu</strong> anteriormente descargado.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-15.png" alt="Seleccionar ISO" />
+</div>
+<h2 id="cerrar-configuración"><span class="header-section-number">4.16</span> Cerrar configuración</h2>
+<ul>
+<li>Si todo ha salido bien nos aparecerá el <strong>ISO en la configuración</strong>.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-16.png" alt="Cerrar configuración" />
+</div>
+<h2 id="finalizar-1"><span class="header-section-number">4.17</span> Finalizar</h2>
+<ul>
+<li>Si todo ha salido bien nos aparecerá la <strong>máquina con la ISO</strong> en VirtualBox.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-17.png" alt="Listar Máquina Virtual" />
+</div>
+<h1 id="intalar-ubuntu"><span class="header-section-number">5</span> Intalar Ubuntu</h1>
+<h2 id="iniciar-máquina-virtual"><span class="header-section-number">5.1</span> Iniciar Máquina Virtual</h2>
+<ul>
+<li>Pulsamos sobre el icono de &quot;<strong>Iniciar</strong>&quot;, y el sistema empieza a cargarse.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-04.png" alt="Inicia Máquina Virtual" />
+</div>
+<h2 id="seleccionar-idioma"><span class="header-section-number">5.2</span> Seleccionar idioma</h2>
+<ul>
+<li>Seleccionamos &quot;<strong>Español</strong>&quot; y pulsamos en &quot;<strong>Instalar Ubuntu</strong>&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-05.png" alt="Seleccionar idioma" />
+</div>
+<h2 id="descagas-opcionales"><span class="header-section-number">5.3</span> Descagas opcionales</h2>
+<ul>
+<li>Podemos seleccionar ciertas <strong>Descargas opcionales</strong>.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-06.png" alt="Descagas opcionales" />
+</div>
+<h2 id="tipo-de-instalación"><span class="header-section-number">5.4</span> Tipo de instalación</h2>
+<ul>
+<li>Seleccionamos &quot;<strong>Borrar disco e instalar Ubuntu</strong>&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-07.png" alt="Tipo de instalación" />
+</div>
+<h2 id="adevertencia"><span class="header-section-number">5.5</span> Adevertencia</h2>
+<ul>
+<li>Acepamos la advertencia de &quot;<strong>cambios en los discos</strong>&quot;&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-08.png" alt="Adevertencia" />
+</div>
+<h2 id="ubicación"><span class="header-section-number">5.6</span> Ubicación</h2>
+<ul>
+<li>Introducimos &quot;<strong>Madrid</strong>&quot; como ubicación.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-09.png" alt="Ubicación" />
+</div>
+<h2 id="teclado"><span class="header-section-number">5.7</span> Teclado</h2>
+<ul>
+<li>Seleccionamos el &quot;<strong>tipo de teclado</strong>&quot; de nuestro ordenador.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-10.png" alt="Teclado" />
+</div>
+<h2 id="usuario-y-contraseña"><span class="header-section-number">5.8</span> Usuario y contraseña</h2>
+<ul>
+<li>Introducimos &quot;<strong>Usuario y contraseña</strong>&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-11.png" alt="Usuario y contraseña" />
+</div>
+<h2 id="esperar"><span class="header-section-number">5.9</span> Esperar</h2>
+<ul>
+<li>Esperamos a que la instalación termine.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-12.png" alt="Esperar" />
+</div>
+<h2 id="reiniciar"><span class="header-section-number">5.10</span> Reiniciar</h2>
+<ul>
+<li>Pulsamos en &quot;<strong>Reiniciar ahora</strong>&quot;</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-13.png" alt="Reiniciar" />
+</div>
+<h2 id="pulsar-enter"><span class="header-section-number">5.11</span> Pulsar ENTER</h2>
+<ul>
+<li>Pulsamos &quot;<strong>ENTER</strong>&quot; para finalizar.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-14.png" alt="Pulsar ENTER" />
+</div>
+<h2 id="cargar-ubuntu"><span class="header-section-number">5.12</span> Cargar Ubuntu</h2>
+<ul>
+<li>Después del último paso se <strong>carga Ubuntu</strong>.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-15.png" alt="Cargar Ubuntu" />
+</div>
+<h2 id="apagar-ubuntu"><span class="header-section-number">5.13</span> Apagar Ubuntu</h2>
+<ul>
+<li>Pulsamos en el botón situado en la <strong>parte superior derecha</strong>.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-16.png" alt="Apagar Ubuntu" />
+</div>
+<h2 id="finalizar-2"><span class="header-section-number">5.14</span> Finalizar</h2>
+<ul>
+<li>Aparece una ventana y pulsamos &quot;<strong>Apagar</strong>&quot;</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-ubuntu-17.png" alt="Finalizar" />
+</div>
+<h2 id="rearancar"><span class="header-section-number">5.15</span> Rearancar</h2>
+<ul>
+<li>La próxima vez que queramos ejecutar el sistema pusaremos en &quot;<strong>Iniciar</strong>&quot;.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-18.png" alt="Listar Máquina Virtual" />
+</div>
+<h1 id="importar-máquina-virtual"><span class="header-section-number">6</span> Importar Máquina Virtual</h1>
+<h2 id="qué-es-eso"><span class="header-section-number">6.1</span> ¿Qué es eso?</h2>
+<ul>
+<li>Podemos <strong>importar máquinas</strong> anteriormente creadas.</li>
+</ul>
+<h2 id="importar-vdi"><span class="header-section-number">6.2</span> Importar VDI</h2>
+<ul>
+<li>Creamos una máquina virtual igual que antes, pero al crear el Disco Virtual seleccionamos el <strong>archivo VDI</strong>.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-18.png" alt="Importar VDI" />
+</div>
+<h2 id="importar-ovf"><span class="header-section-number">6.3</span> Importar OVF</h2>
+<ul>
+<li>Pulsamos en &quot;<strong>Archivo &gt; Importar servicio virtualizado...</strong>&quot; y seleccionamos el archivo OVF.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-19.png" alt="Importar OVF" />
+</div>
+<h2 id="exportar-ovf"><span class="header-section-number">6.4</span> Exportar OVF</h2>
+<ul>
+<li>Para ello pulsamos en &quot;<strong>Archivo &gt; Exportar servicio virtualizado...</strong>&quot; y seguimos las instrucciones.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/01-virtual-box/01-virtual-box-19.png" alt="Exportar OVF" />
+</div>
+</body>
+</html>
