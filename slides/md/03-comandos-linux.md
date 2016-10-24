@@ -38,6 +38,14 @@
 
 
 
+## Ayuda Comandos
+
+- El comando **man nombrecomando** muestra el manual del comando.
+Una vez dentro para salir hay que pulsar la tecla q.
+
+- También podemos probar con **nombrecomando -h** o **nombrecomando --help**
+o con **info nombrecomando**.
+
 ## Cambio de directorio
 
 - Para cambiar de directorio se usa el comando **cd
@@ -126,7 +134,7 @@ en caso de existir su contenido es sustituido por el
 de file1. El fichero file2 estará en el mismo directorio
 que file1.
 
-## Mover/renombrar fichero
+## Mover/renombrar ficheros
 
 - El comando **mv** permite mover o renoimbrar un fichero.
 La sintaxis es mv file1 file2 y realiza la misma función que
@@ -260,253 +268,184 @@ criterio de selección.
 - **grep ‘ˆ[ˆd]’ text** recupera las líneas que no comienzan por d.
 - **grep -v ‘ˆC’ file1 > file2** quita las líneas de file1 que comienzan por C y lo copia en file2.
 
-## Comandos básicos del terminal
+## Redirecciones
 
-- Redirecciones:
-Se puede redirigir la salida de un comando usando
-los operadores:
-•(>) redirige la salida estándar hacia el fichero
-indicado y en caso de no existir se crea.
-•(<) redirige la entrada estándar desde un
-determinado fichero
-•(>>) redirige la salida estándar hacia otro fichero,
-pero añadiendo dicha salida al final de ese fichero,
-sin sobreescribir el contenido original.
+- Se puede redirigir la salida de un comando usando los operadores:
 
-## Comandos básicos del terminal
+    - (**>**) redirige la salida estándar hacia el fichero indicado
+    y en caso de no existir se crea.
+    - (**<**) redirige la entrada estándar desde un determinado fichero
+    - (**>>**) redirige la salida estándar hacia otro fichero,
+    pero añadiendo dicha salida al final de ese fichero,
+    sin sobreescribir el contenido original.
 
-- Redirecciones:
-Por ejemplo:
-•date >>archivo el fichero archivo contendrá
+## Ejemplos Redirecciones:
+
+- **date >> archivo** el fichero archivo contendrá
 información sobre todas las veces que hemos
 entrado en el sistema.
-•cat file1 file2 >file3 añade al fichero file2 al final de
+
+- **cat file1 file2 > file3** añade al fichero file2 al final de
 file1 y al conjunto lo llama file3
-•cat file2 >>file1 realiza la misma operación que el
-anterior, pero al resultado lo llama file1
 
-## Comandos básicos del terminal
+##  Tuberías
 
-- Tuberías
-Una tubería (|)
-permite comunicar la salida
-estándar de un comando con la entrada estándar de
-otro.
-Por ejemplo
-ls | mail juan envía a
+- Una tubería (|) permite comunicar la salida
+estándar de un comando con la entrada estándar de otro.
+
+- Por ejemplo **ls | mail juan** envía a
 juan una lista de los ficheros del sistema.
-Con el operador de tubería se pueden empalmar
+
+- Con el operador de tubería se pueden empalmar
 tantos comandos como se desee.
 
-## Comandos básicos del terminal
+## Ejecución segundo plano
 
-- Ejecución de un programa
-Existen varios comandos para gestionar la ejecución
-de un programa:
-- El carácter & permite realizar una ejecución en
+- El carácter **& al final** permite realizar una ejecución en
 segundo plano recuperando inmediatamente el
 control del terminal. Para ello se añade el carácter
-& al final del comando de ejecución program <
-datos.d >resultados.r &. Como resultado aparece
-en el terminal el número de proceso de la
-ejecución de este programa.
+& al final del comando de ejecución.
 
-## Comandos básicos del terminal
+## Parar un proceso
 
-- Ejecución de un programa
 - Para detener la ejecución de un proceso se puede
-utilizar el comando kill númerodeproceso
+utilizar el comando **kill númerodeproceso**.
+
+## Continuar en segundo plano
+
 - Cuando se sale del sistema si hay algún proceso
 ejecutándose en segundo plano se para salvo que
-se use el comando nohup program. En este caso
+se use el comando **nohup nombreprograma**. En este caso
 todas las salidas del programa se dirigen a un
 fichero llamado nohup.out.
 
-## Comandos básicos del terminal
+## Cambiar la prioridad
 
-- Ejecución de un programa
-- El comando nice permite realizar ejecuciones con
-baja prioridad de la forma:
-- **nice program &
-- **nice nohup program &
-Para darle al programa la prioridad mínima habría
-que invocarlo como nice -19 program & donde el
--19 indica la mínima prioridad.
+- Para darle al programa la prioridad mínima habría
+que invocarlo con **nice -19 nombreprograma &**.
 
-## Comandos básicos del terminal
+- Para darle al programa la prioridad máxima habría
+que invocarlo con **nice --20 nombreprograma &**.
 
-- Ejecución de un programa
-- El comando top muestra una lista de los procesos
+## Listado procesos
+
+- El comando **top** muestra una lista de los procesos
 que se están ejecutando.
 
-## Comandos básicos del terminal
+## Agrupación de ficheros
 
-- Compresión de ficheros
-El comando tar –cvf nombre_archivo.tar
-fichero1 fichero2 … agrupa varios ficheros en
-uno solo “archivo” tar, y gzip fichero se
-comprime fichero (que es borrado) y se crea un
-fichero con nombre fichero.gz.
+- El comando **tar -cvf nombre_archivo.tar
+fichero1 fichero2 ...** agrupa varios ficheros en
+uno solo “archivo” tar
 
-## Comandos básicos del terminal
+## Compresión de ficheros
 
-- Compresión de ficheros
-Dado que suele emplearse tar y gzip de forma
-consecutiva obteniéndose archivos con extensión
-tar.gz o tgz, entonces tar incluye la opción z para
-extraer ficheros con esta extensión
-tar –
-zxf fichero.tar.gz
+- El comando **gzip fichero** comprime fichero
+(que es borrado) y se crea un fichero con nombre fichero.gz.
 
-## Comandos básicos del terminal
+## Agrupación y compresión
 
-- Compresión de ficheros
-Se pueden realizar las operaciones inversas, de
-manera que se pueden extraer los ficheros
-mediante
-tar –xpvf
-nombre_archivo.tar fichero1 …, y descomprimir
-un fichero mediante gzip –d fichero.gz
+- El comando **tar -czfv archivo.tar.gz ficheros** empaqueta y comprime ficheros.
 
-## Otros comandos
-- Espacio ocupado en el disco.
-El comando du permite conocer el espacio en
+## Descomprimir ficheros
+
+- El comando **tar -xzvf archivo.tar.gz** descomprime archivo.tar.gz
+
+
+
+
+# Otros comandos
+
+
+
+
+## Espacio carpetas
+
+- El comando **du** permite conocer el espacio en
 bloques ocupado en el disco por un determinado
 directorio y todos los subdirectorios que cuelgan de
-él. Para usarlo se coloca en el directorio y se teclear
-du:
+él.
 
-## Otros comandos
-- Espacio ocupado en el disco.
-Para obtener la información en bytes se debe
-emplear la opción –h: du -h
+- Para obtener la información en bytes se debe
+emplear la opción -h: **du -h**
 
-## Otros comandos
-- Espacio ocupado en el disco.
-El comando df informa del espacio usado por las
-particiones del sistema que se encuentren
-montadas.
+## Espacio particiones
 
-## Otros comandos
-- Otros comandos
-Comando
+- El comando **df** informa del espacio usado por las
+particiones del sistema que se encuentren montadas.
 
-Significado
+- Para obtener la información en bytes se debe
+emplear la opción -h: **df -h**
 
-date
+## Fecha
 
-Muestra el día y la hora
+- El comando **date** muestra el día y la hora.
 
-cal
+## Calendario
 
-Muestra el calendario. Tiene diversas opciones.
-Por ejemplo cal 1945 mostraría el calendario del
-año 1945.
+- El comando **cal** muestra el calendario. Tiene diversas opciones.
+Por ejemplo cal 1945 mostraría el calendario del año 1945.
 
-who
+## Usuarios conectados
 
-Indica qué usuarios tiene el ordenador en ese
-momento, en qué terminal están y desde qué
-hora.
+- El comando **who** muestralos usuarios están conectados al ordenador en ese
+momento, en qué terminal están y desde qué hora.
 
-whoami
+## Quien soy
 
-Indica cuál es la terminal y la sesión en la que se
-está trabajando.
+- El comando **whoami** te indica quien eres.
 
-## Otros comandos
-- Otros comandos
-Comando
+## Tiempo sin apagar
 
-Significado
+- El comando **uptime** muestra el tiempo que lleva encendido nuestro ordenador.
 
-uptime
+## Nombre de la máquina
 
-Muestra el tiempo que lleva encendido nuestro
-ordenador.
+- El comando **hostname** muestra el nombre de la máquina.
 
-hostname
+## Hardware
 
-Muestra el nombre de la maquina
+- El comando **lshw** muestra todas las características del hardware.
 
-bc
+## Dispositivos PCI
 
-Abre una calculadora de texto. Para salir se
-introduce quit.
+- El comando **lspci** muestra los diferentes dispositivos PCI.
 
-lshw
+## Dispositivos USB
 
-Muestra todas las características del hardware.
+- El comando **lsusb** muestra los dispositivos tengo en los bus USB
 
-## Otros comandos
-- Otros comandos
-Comando
+## Comandos usados
 
-Significado
+- El comando **history** muestra los comandos usados por el usuario
+en orden cronológico.
 
-history
+## Permisos por defecto
 
-Muestra los comandos usados por el usuario
-en orden cronológico
+- El comando **umask** muestra los permisos con los que el usuario
+creara sus archivos por defecto
 
-fc -l
+## Versión kernel
 
-Muestra los últimos comandos usados por el
-usuario
+- El comando **uname -r** muestra la version del kernel
 
-man comando
+## Cerrar programas
 
-Muestra el manual de un comando con sus
-modificadores y argumentos.
+- El comando **xkill** permite cerrar un programa bloqueado.
 
-lspci
+## Grupos
 
-Muestra los diferentes dispositivos PCI.
-
-## Otros comandos
-- Otros comandos
-Comando
-
-Significado
-
-umask
-
-Muestra los permisos con los que el usuario
-creara sus archivos por
-defecto
-
-uname -r
-
-Muestra la version del kernel
-
-lsusb
-
-Muestra los dispositivos tengo en los bus
-USB
-
-xkill
-
-Permite cerrar un programa bloqueado.
-
-## Otros comandos
-- Otros comandos
-Comando
-
-Significado
-
-groups
-
-Muestra los grupos del sistema alos que
+- El comando **groups** muestra los grupos del sistema a los que
 pertenece un usuario.
 
-clear
+## Limpiar terminal
 
-Limpia la consola.
+- El comando **clear** limpia el terminal.
 
-head
+## Primeras líneas
 
-Indicando un número n y un nombre de fichero,
-muestra las n primeras líneas del fichero
-indicado.
+- El comando **head** muestras las primeras líneas de un fichero
 
-##
+## Ultimas líneas
+
+- El comando **tail** muestras las últimas líneas de un fichero

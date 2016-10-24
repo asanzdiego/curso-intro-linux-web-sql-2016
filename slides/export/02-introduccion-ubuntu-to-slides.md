@@ -251,18 +251,18 @@ conocerlo, al menos a grandes rasgos.
 
 ## /, bin y boot
 
-- /: Representa el nivel mas alto dentro de la
+- **/**: Representa el nivel mas alto dentro de la
 jerarquía y contiene el resto de carpetas,
 particiones y otros dispositivos.
-- /bin: Contiene los ejecutables propios de Linux.
-- /boot: Contiene los archivos necesarios para el
+- **/bin**: Contiene los ejecutables propios de Linux.
+- **/boot**: Contiene los archivos necesarios para el
 inicio del sistema.
 
 ## dev y etc
 
-- /dev: Contiene los dispositivos del sistema que
+- **/dev**: Contiene los dispositivos del sistema que
 son tratados como un fichero más.
-- /etc: Contiene los ficheros de configuración de los
+- **/etc**: Contiene los ficheros de configuración de los
 programas instalados y ciertos scripts que se
 ejecutan en el inicio del sistema. Pueden ser
 sustituidos por ficheros de configuración propios
@@ -270,97 +270,97 @@ de cada usuario
 
 ## home y lib
 
-- /home: Directorio que contiene un directorio
+- **/home**: Directorio que contiene un directorio
 (carpeta personal) por cada usuario dado de alta
 en el sistema.
-- /lib: Contiene las bibliotecas o librerías del
+- **/lib**: Contiene las bibliotecas o librerías del
 sistema, así como módulos y controladores
 (drivers).
 
 ## media y mnt
 
-- /media: Es el lugar dónde se montan las unidades
+- **/media**: Es el lugar dónde se montan las unidades
 extraibles como los dispositivos USB, disqueteras,
 unidades de CD/DVD y en algunas distribuciones
 las particiones adicionales.
-- /mnt: Es el directorio que se suele usar para
+- **/mnt**: Es el directorio que se suele usar para
 montajes temporales de unidades.
 
 ## opt y proc
 
-- /opt: Es el directorio destinado para
+- **/opt**: Es el directorio destinado para
 guardar paquetes adicionales de
 aplicaciones.
-- /proc: Contiene informacion para la
+- **/proc**: Contiene informacion para la
 virtualizacion del sistema de ficheros de
 Linux.
 
 ## root, sbin y srv
 
-- /root: Es la carpeta personal del administrador.
-- /sbin: Contiene los ejecutables de administración.
-- /srv: Contiene información del sistema
+- **/root**: Es la carpeta personal del administrador.
+- **/sbin**: Contiene los ejecutables de administración.
+- **/srv**: Contiene información del sistema
 sobre ciertos servicios que ofrece (FTP, HTTP...).
 
 ## sys y tmp
 
-- /sys: Contiene información sobre los dispositivos
+- **/sys**: Contiene información sobre los dispositivos
 tal y como los ve el kernel Linux.
-- /tmp: Es un directorio donde se almacenan
+- **/tmp**: Es un directorio donde se almacenan
 ficheros temporales. Cada vez que se inicia el
 sistema este directorio se limpia.
 
 ## usr/bin, usr/include
 
-- /usr/bin: Ejecutables de la mayoría de las
+- **/usr/bin**: Ejecutables de la mayoría de las
 aplicaciones de escritorio.
-- /usr/include: Archivos cabecera para C y C++.
+- **/usr/include**: Archivos cabecera para C y C++.
 
 ##  usr/lib y usr/local
 
-- /usr/lib: Bibliotecas para C y C++.
-- /usr/local: Tiene una jerarquía parecida al directorio /usr.
+- **/usr/lib**: Bibliotecas para C y C++.
+- **/usr/local**: Tiene una jerarquía parecida al directorio /usr.
 
 ## usr/sbin, usr/share y usr/src
 
-- /usr/sbin: Comandos administrativos para el sistema.
-- /usr/share:Archivos compartidos como
+- **/usr/sbin**: Comandos administrativos para el sistema.
+- **/usr/share:Archivos compartidos como
 ficheros de configuración, imágenes, iconos...
-- /usr/src: Contiene el código fuente para el
+- **/usr/src**: Contiene el código fuente para el
 kernel de Linux.
 
 ## var
 
-- /var: Contiene ficheros del sistema como el buffer
+- **/var**: Contiene ficheros del sistema como el buffer
 de impresión, logs(registros de datos):
 
 ## var/cache y var/lib
 
-- /var/cache: Datos cacheados para las
+- **/var/cache**: Datos cacheados para las
 aplicaciones.
-- var/lib: Información sobre el estado actual de
+- **/var/lib**: Información sobre el estado actual de
 las aplicaciones.
 
 ## var/lock y var/log
 
-- /var/lock: Ficheros que se encargan de que un
+- **/var/lock**: Ficheros que se encargan de que un
 recurso solo sea usado por una aplicacion
 determinada que ha pedido su exclusividad,
 hasta que esta lo libere.
-- /var/log: Guarda los logs (registros de datos)
+- **/var/log**: Guarda los logs (registros de datos)
 del sistema.
 
 ## var/mail, var/opt y var/run
 
-- /var/mail: Guarda los correos de los usuarios.
-- /var/opt: Almacena los datos usados por los
+- **/var/mail**: Guarda los correos de los usuarios.
+- **/var/opt**: Almacena los datos usados por los
 paquetes almacenados en /opt.
-- /var/run: Almacena informacion sobre el
+- **/var/run**: Almacena informacion sobre el
 sistema desde que se inicio.
 
 ## var/spool y var/tmp
 
-- /var/spool: Almacena datos esperando a que
+- **/var/spool**: Almacena datos esperando a que
 sean tratados por algún tipo de proceso.
-- /var/tmp: Almacena ficheros temporales que
+- **/var/tmp**: Almacena ficheros temporales que
 no se borran al reiniciar el equipo.
