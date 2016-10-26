@@ -1,0 +1,23 @@
+Hola a todos:
+
+Soy Adolfo Sanz De Diego y os voy a dar 4 de los 5 bloques del "Módulo de nivelación" el sábado 5 de noviembre (mañana y tarde).
+
+- Por la mañana veremos los bloques 2, 3 y 4, osea "Máquinas Virtuales, Linux, Técnologías Web, Bases de datos y SQL" que tenéis en el classroom MÓDULO NIVELACIÓN - VM/LINUX/WEB/BBDD/SQL (https://classroom.google.com/c/MzAzNDYyMzIxOFpa)
+
+- Y por la tarde veremos "Git, GitHub y Markdown" que tenéis en el classroom MÓDULO NIVELACIÓN - GIT/GITHUB/MARKDOWN (https://classroom.google.com/c/MzAzNDc4ODUxOFpa)
+
+Es mucha materia para tan poco tiempo, pero está pensado así porque es un curso de nivelación, y se supone que gran parte de los alumnos conoce gran parte del temario de este módulo. Por esa razón y poder aprovechar al máximo las sesiones presenciales y centrarnos en lo realmente importante, os voy a pedir que hagáis ciertas tareas antes de la sesión presencial.
+
+En ambos classroom os he puesto, además de recursos, ciertas tareas con distintas prioridades:
+
+- Tareas "OBLIGATORIAS" que tenéis que hacer antes del 5 de noviembre. Si no las hacéis no podréis seguir la clase del sábado.
+
+- Tareas "MUY RECOMENDABLES" que estaría muy bien que hicierais antes del 5 de noviembre. Os permitirán conocer las materias que voy a tratar el sábado, y poder aprovechar la clase.
+
+- Tareas "recomendables" que estaría muy bien que hicierais antes del 5 de noviembre, pero siempre y cuando hayáis hecho las otras con antelación. Os permitirán conocer más a fondo las materias que voy a tratar el sábado, y poder aprovechar la clase al máximo.
+
+- Tareas "opcionales" que podréis hacer después de la sesión presencial para afianzar conocimientos.
+
+Nos vemos en breve.
+
+Un saludo.
