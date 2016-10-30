@@ -22,9 +22,9 @@
 
 ## Licencia
 
-- **Este obra está bajo una licencia:**
-    - [Creative Commons Reconocimiento-CompartirIgual 3.0](http://creativecommons.org/licenses/by-sa/3.0/es/)
-
+- **Copyright:**
+    - Antonio Sarasa Cabezuelo <[antoniosarasa@campusciff.net](mailto:antoniosarasa@campusciff.net)>
+    
 ## Fuente
 
 - Las slides y sus fuentes las podéis encontrar en:
