@@ -79,6 +79,11 @@ multivaluados.
 
 - Permite el anidamiento de etiquetas.
 
+## Ejemplo API
+
+- <http://www.thomas-bayer.com/sqlrest/CUSTOMER/>
+
+- <http://www.thomas-bayer.com/sqlrest/CUSTOMER/3/>
 
 
 
