@@ -33,6 +33,50 @@
 
 
 
+# SQLite
+
+
+
+
+## ¿Qué es?
+
+- **SQLite** es un sistema de gestión de bases de datos relacional,
+contenida en una relativamente pequeña (~275 kiB) biblioteca escrita en C.
+
+- SQLite es un proyecto de dominio público creado por D. Richard Hipp.
+
+## Instalación
+
+- En Ubuntu:
+
+~~~
+sudo apt install sqlite3
+~~~
+
+
+
+
+# SQLiteBrowser
+
+
+
+
+# ¿Qué es?
+
+- Es una **interfaz gráfica** para el manejo de SQLite.
+
+- Tiene una Licencia GPL (Software Libre)
+
+## Instalación
+
+- En Ubuntu:
+
+~~~
+sudo apt install sqlitebrowser
+~~~
+
+
+
 
 # Creación de tablas
 
