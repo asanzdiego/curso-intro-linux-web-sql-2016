@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Introducción XML" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Introducción XML</title>
+  <style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+pre, code { background-color: #f8f8f8; }
+code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code > span.dt { color: #204a87; } /* DataType */
+code > span.dv { color: #0000cf; } /* DecVal */
+code > span.bn { color: #0000cf; } /* BaseN */
+code > span.fl { color: #0000cf; } /* Float */
+code > span.ch { color: #4e9a06; } /* Char */
+code > span.st { color: #4e9a06; } /* String */
+code > span.co { color: #8f5902; font-style: italic; } /* Comment */
+code > span.ot { color: #8f5902; } /* Other */
+code > span.al { color: #ef2929; } /* Alert */
+code > span.fu { color: #000000; } /* Function */
+code > span.er { color: #a40000; font-weight: bold; } /* Error */
+code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #000000; } /* SpecialChar */
+code > span.vs { color: #4e9a06; } /* VerbatimString */
+code > span.ss { color: #4e9a06; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #000000; } /* Variable */
+code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code > span.ex { } /* Extension */
+code > span.at { color: #c4a000; } /* Attribute */
+code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+</head>
+<body>
+<header>
+<h1 class="title">Introducción XML</h1>
+<h2 class="author">Adolfo Sanz De Diego</h2>
+<h3 class="date">Noviembre 2016</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#acerca-de"><span class="toc-section-number">1</span> Acerca de</a><ul>
+<li><a href="#autor"><span class="toc-section-number">1.1</span> Autor</a></li>
+<li><a href="#licencia"><span class="toc-section-number">1.2</span> Licencia</a></li>
+<li><a href="#fuente"><span class="toc-section-number">1.3</span> Fuente</a></li>
+</ul></li>
+<li><a href="#introducción-a-xml"><span class="toc-section-number">2</span> Introducción a XML</a><ul>
+<li><a href="#qué-es"><span class="toc-section-number">2.1</span> ¿Qué es?</a></li>
+<li><a href="#etiquetas"><span class="toc-section-number">2.2</span> Etiquetas</a></li>
+<li><a href="#ejemplo-xml"><span class="toc-section-number">2.3</span> Ejemplo XML</a></li>
+<li><a href="#ventajas"><span class="toc-section-number">2.4</span> Ventajas</a></li>
+<li><a href="#ejemplo-api"><span class="toc-section-number">2.5</span> Ejemplo API</a></li>
+</ul></li>
+<li><a href="#estructura-básica"><span class="toc-section-number">3</span> Estructura básica</a><ul>
+<li><a href="#prologo"><span class="toc-section-number">3.1</span> Prologo</a></li>
+<li><a href="#elementos"><span class="toc-section-number">3.2</span> Elementos</a></li>
+<li><a href="#elementos-vacíos"><span class="toc-section-number">3.3</span> Elementos vacíos</a></li>
+<li><a href="#elementos-anidados"><span class="toc-section-number">3.4</span> Elementos anidados</a></li>
+<li><a href="#ejemplo-anidado"><span class="toc-section-number">3.5</span> Ejemplo anidado</a></li>
+<li><a href="#atributos"><span class="toc-section-number">3.6</span> Atributos</a></li>
+<li><a href="#mezcla"><span class="toc-section-number">3.7</span> Mezcla</a></li>
+<li><a href="#raíz"><span class="toc-section-number">3.8</span> Raíz</a></li>
+<li><a href="#comentarios"><span class="toc-section-number">3.9</span> Comentarios</a></li>
+<li><a href="#cdata"><span class="toc-section-number">3.10</span> CDATA</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="acerca-de"><span class="header-section-number">1</span> Acerca de</h1>
+<h2 id="autor"><span class="header-section-number">1.1</span> Autor</h2>
+<ul>
+<li><strong>Adolfo Sanz De Diego</strong>
+<ul>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es/">asanzdiego.blogspot.com.es</a></li>
+<li>Correo: <a href="mailto:asanzdiego@gmail.com">asanzdiego@gmail.com</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/">slideshare.net/asanzdiego</a></li>
+</ul></li>
+</ul>
+<h2 id="licencia"><span class="header-section-number">1.2</span> Licencia</h2>
+<ul>
+<li><strong>Copyright:</strong>
+<ul>
+<li>Antonio Sarasa Cabezuelo &lt;<a href="mailto:antoniosarasa@campusciff.net">antoniosarasa@campusciff.net</a>&gt;</li>
+</ul></li>
+</ul>
+<h2 id="fuente"><span class="header-section-number">1.3</span> Fuente</h2>
+<ul>
+<li>Las slides y sus fuentes las podéis encontrar en:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-intro-linux-web-sql-2016" class="uri">https://github.com/asanzdiego/curso-intro-linux-web-sql-2016</a></li>
+</ul></li>
+</ul>
+<h1 id="introducción-a-xml"><span class="header-section-number">2</span> Introducción a XML</h1>
+<h2 id="qué-es"><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li><p>XML (Extensible Markup Language) es un metalenguaje que <strong>permite definir lenguajes de marcado</strong>.</p></li>
+<li><p>Los lenguajes de marcado permiten describir la estructura de los contenidos de un documento.</p></li>
+</ul>
+<h2 id="etiquetas"><span class="header-section-number">2.2</span> Etiquetas</h2>
+<ul>
+<li><p>Un lenguaje de marcado está formado por un conjunto de etiquetas que se encierran entre <strong>corchetes angulares</strong>, &lt;&gt;, y se usan en pares.</p></li>
+<li><p>Cada par de etiquetas delimita el comienzo y el final de una porción de documento a la que se refiere la etiqueta. Por ejemplo:</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;asignatura&gt;</span>Bases de datos<span class="kw">&lt;/asignatura&gt;</span></code></pre></div>
+<h2 id="ejemplo-xml"><span class="header-section-number">2.3</span> Ejemplo XML</h2>
+<div style="text-align:center">
+<img src="../img/04-introduccion-xml/04-introduccion-xml-01.png" alt="Ejemplo XML" />
+</div>
+<h2 id="ventajas"><span class="header-section-number">2.4</span> Ventajas</h2>
+<ul>
+<li><p>Permite que la información esté autodocumentada.</p></li>
+<li><p>Formato no rígido pues dispone de la capacidad de reconocer e ignorar nuevas etiquetas.</p></li>
+<li><p>Las etiquetas pueden aparecer varias veces facilitando la representación de atributos multivaluados.</p></li>
+<li><p>Permite el anidamiento de etiquetas.</p></li>
+</ul>
+<h2 id="ejemplo-api"><span class="header-section-number">2.5</span> Ejemplo API</h2>
+<ul>
+<li><p><a href="http://www.thomas-bayer.com/sqlrest/CUSTOMER/" class="uri">http://www.thomas-bayer.com/sqlrest/CUSTOMER/</a></p></li>
+<li><p><a href="http://www.thomas-bayer.com/sqlrest/CUSTOMER/3/" class="uri">http://www.thomas-bayer.com/sqlrest/CUSTOMER/3/</a></p></li>
+</ul>
+<h1 id="estructura-básica"><span class="header-section-number">3</span> Estructura básica</h1>
+<h2 id="prologo"><span class="header-section-number">3.1</span> Prologo</h2>
+<ul>
+<li><p>Consta de dos declaraciones:</p>
+<ul>
+<li>La declaración XML que indica <strong>la versión de XML utilizada y el tipo de codificación de caracteres</strong>.
+<?xml version="1.0" encoding="UTF-8"?></li>
+<li>La declaración de tipo de documento que asocia el documento a <strong>una DTD o XSD</strong> respecto a la cual el documento es conforme.</li>
+</ul></li>
+</ul>
+<h2 id="elementos"><span class="header-section-number">3.2</span> Elementos</h2>
+<ul>
+<li>Es un par de etiquetas de comienzo y final coincidentes que delimita una <strong>porción de información</strong>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;t</span><span class="er">ítulo</span><span class="kw">&gt;</span>introducción<span class="kw">&lt;/t</span><span class="er">ítulo</span><span class="kw">&gt;</span></code></pre></div>
+<h2 id="elementos-vacíos"><span class="header-section-number">3.3</span> Elementos vacíos</h2>
+<ul>
+<li>Existen elementos vacíos que no contienen contenido.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Nombre</span><span class="ot"> etiqueta</span><span class="er">/&gt;</span>
+<span class="er">&lt;Nombre</span> <span class="er">etiqueta&gt;&lt;/Nombre</span> <span class="er">etiqueta&gt;</span></code></pre></div>
+<h2 id="elementos-anidados"><span class="header-section-number">3.4</span> Elementos anidados</h2>
+<ul>
+<li><p>Los elementos <strong>se pueden anidar</strong>:</p>
+<ul>
+<li><p>Un texto aparece en el contexto de un elemento si aparece entre la etiqueta de inicio y final de dicho elemento.</p></li>
+<li><p>Las etiquetas se anidan correctamente si toda etiqueta de inicio tiene un única etiqueta de finalización coincidente que está en el contexto del mismo elemento padre.</p></li>
+</ul></li>
+<li><p>Un elemento puede aparecer varias veces en un documento XML.</p></li>
+</ul>
+<h2 id="ejemplo-anidado"><span class="header-section-number">3.5</span> Ejemplo anidado</h2>
+<div style="text-align:center">
+<img src="../img/04-introduccion-xml/04-introduccion-xml-02.png" alt="Elementos anidados" />
+</div>
+<h2 id="atributos"><span class="header-section-number">3.6</span> Atributos</h2>
+<ul>
+<li>Las etiquetas de los elementos pueden incluir 1 o más <strong>atributos que representan propiedades</strong> de los elementos de la forma Nombre atributo=&quot;Valor atributo&quot;</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;cuenta</span><span class="ot"> tipo_cuenta=</span><span class="st">&quot;corriente&quot;</span><span class="kw">&gt;</span></code></pre></div>
+<ul>
+<li>Los atributos pueden aparecer solamente una vez en una etiqueta dada.</li>
+</ul>
+<h2 id="mezcla"><span class="header-section-number">3.7</span> Mezcla</h2>
+<ul>
+<li>El texto en un documento XML puede estar mezclado con los subelementos de otro elemento.</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/04-introduccion-xml/04-introduccion-xml-03.png" alt="Mezcla texto con subelementos" />
+</div>
+<h2 id="raíz"><span class="header-section-number">3.8</span> Raíz</h2>
+<ul>
+<li><p>Todo documento XML tiene <strong>un único elemento raíz</strong> que engloba al resto de elementos del documento.</p></li>
+<li><p>En el primer ejemplo el elemento <banco> era la raíz.</p></li>
+</ul>
+<h2 id="comentarios"><span class="header-section-number">3.9</span> Comentarios</h2>
+<ul>
+<li><p>Es un texto que se escribe <strong>entre &lt;!–- y --&gt;</strong></p></li>
+<li><p>La cadena &quot;--&quot; no puede aparecer dentro de un comentario.</p></li>
+<li><p>Los comentarios pueden aparecer en cualquier sitio salvo dentro de declaraciones, etiquetas y dentro de otros comentarios.</p></li>
+</ul>
+<h2 id="cdata"><span class="header-section-number">3.10</span> CDATA</h2>
+<ul>
+<li>A veces es necesario <strong>almacenar valores que contienen etiquetas sin que se interpreten como etiquetas XML</strong>, es decir como texto normal. Para ello se usa la construcción:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="er">&lt;</span><span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&quot;text-align:center&quot;</span><span class="kw">&gt;</span>![CDATA]<span class="kw">&lt;cuenta&gt;</span>…<span class="kw">&lt;/cuenta&gt;</span>]]&gt;</code></pre></div>
+</body>
+</html>

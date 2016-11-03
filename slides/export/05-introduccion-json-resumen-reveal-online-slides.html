@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="pandoc">
+  <meta name="description" content="Introducción JSON" />
+  <meta name="author" content="Adolfo Sanz De Diego">
+  <title>Introducción JSON</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js//css/reveal.css">
+  <link rel="stylesheet" href="https://denehyg.github.io/reveal.js-menu/plugin/reveal.js-menu//menu.css">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js//css/theme/league.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js//css/print/pdf.css' : 'http://lab.hakim.se/reveal-js//css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+  <style type="text/css">
+    code{
+      white-space: pre;
+    }
+    .reveal pre code {
+      background: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
+    }
+    .reveal section img {
+      margin: 15px 0px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    strong {
+      color: #777
+    }
+    a:hover {
+      text-decoration: underline !important;
+    }
+    h1.title {
+      font-size: 350% !important;
+    }
+    h1 {
+      font-size: 250% !important;
+    }
+    h2 {
+      font-size: 150% !important;
+    }
+    h3 {
+      font-size: 100% !important;
+    }
+    @media print {
+      #only-print-parent { display: table !important; }
+      #only-print-child { display: table-cell !important; vertical-align: middle;}
+      h1.title { font-size: 400% !important;}
+      h1 { font-size: 300% !important; }
+      h2 { font-size: 200% !important; }
+      h3 { font-size: 150% !important; }
+    }
+  </style>
+  <!--[if lt IE 9]>
+  <script src="http://lab.hakim.se/reveal-js//lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="only-print-parent">
+    <div id="only-print-child">
+      <h1 class="title">Introducción JSON</h2>
+      <h2 class="author">Adolfo Sanz De Diego</h2>
+      <h3 class="date">Noviembre 2016</h3>
+    </div>
+</section>
+
+<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">1</span> Acerca de</h1></section><section id="autor" class="slide level2">
+<h2><span class="header-section-number">1.1</span> Autor</h2>
+<ul>
+<li><strong>Adolfo Sanz De Diego</strong>
+<ul>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es/">asanzdiego.blogspot.com.es</a></li>
+<li>Correo: <a href="mailto:asanzdiego@gmail.com">asanzdiego@gmail.com</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/">slideshare.net/asanzdiego</a></li>
+</ul></li>
+</ul>
+</section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">1.2</span> Licencia</h2>
+<ul>
+<li><strong>Copyright:</strong>
+<ul>
+<li>Antonio Sarasa Cabezuelo &lt;<a href="mailto:antoniosarasa@campusciff.net">antoniosarasa@campusciff.net</a>&gt;</li>
+</ul></li>
+</ul>
+</section><section id="fuente" class="slide level2">
+<h2><span class="header-section-number">1.3</span> Fuente</h2>
+<ul>
+<li>Las slides y sus fuentes las podéis encontrar en:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-intro-linux-web-sql-2016" class="uri">https://github.com/asanzdiego/curso-intro-linux-web-sql-2016</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="introducción-a-json" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Introducción a JSON</h1></section><section id="qué-es" class="slide level2">
+<h2><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li>JSON (<strong>JavaScript Object Notation</strong>) es un formato de datos que se caracteriza:
+<ul>
+<li>Está basado en JavaScript.</li>
+<li>Es utilizado para el intercambio de datos.</li>
+<li>Es utilizado por muchas APIs de sitios web tales como Facebook, Twitter,... para devolver su contenido.</li>
+<li>Es independiente del lenguaje</li>
+<li>Los archivos tienen extensión .json</li>
+</ul></li>
+</ul>
+</section><section id="parejas-clavevalor" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Parejas clave=valor</h2>
+<ul>
+<li>JSON representa objetos de manera textual mediante <strong>parejas clave=valor</strong>,</li>
+</ul>
+<figure>
+<img src="../img/05-introduccion-json/05-introduccion-json-01.png" alt="Ejemplo JSON" /><figcaption>Ejemplo JSON</figcaption>
+</figure>
+</section><section id="sintaxis-json" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Sintaxis JSON</h2>
+<ul>
+<li><p>Un objeto se representa como una secuencia de parejas clave=valor encerradas entre llaves { y }.</p></li>
+<li><p>Las claves son cadenas de texto entre comillas &quot; y &quot;.</p></li>
+</ul>
+</section><section id="valores-json" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Valores JSON</h2>
+<ul>
+<li>Tipos básicos: <strong>cadena, número, booleano, null</strong></li>
+<li><strong>Arrays</strong> de valores: entre corchetes [ y ]</li>
+<li>Otros <strong>objetos</strong> JSON: entre llaves { y }</li>
+</ul>
+</section><section id="ejemplo-json-i" class="slide level2">
+<h2><span class="header-section-number">2.5</span> Ejemplo JSON (I)</h2>
+<ul>
+<li>Considerar el siguiente ejemplo dónde se quiere representar la ficha de un estudiante con sus datos personales y asignaturas matriculadas:
+<ul>
+<li>Nombre=&quot;Pepito Pérez&quot;</li>
+<li>DNI=&quot;517899R&quot;</li>
+<li>Edad=&quot;22&quot;</li>
+</ul></li>
+</ul>
+</section><section id="ejemplo-json-ii" class="slide level2">
+<h2><span class="header-section-number">2.6</span> Ejemplo JSON (II)</h2>
+<ul>
+<li>Asignaturas matriculadas:
+<ul>
+<li>Obligatorias: Sistemas Operativos, Compiladores, y Bases de Datos.</li>
+<li>Optativas: Bases de Datos NoSQL, Minería de Datos, Programación Lógica.</li>
+<li>Libre Elección: Ajedrez, Música Clásica</li>
+</ul></li>
+</ul>
+</section><section id="ejemplo-json-iii" class="slide level2">
+<h2><span class="header-section-number">2.7</span> Ejemplo JSON (III)</h2>
+<ul>
+<li>La ficha de información se puede representar en un documento JSON de la siguiente manera:</li>
+</ul>
+<figure>
+<img src="../img/05-introduccion-json/05-introduccion-json-02.png" alt="Ejemplo JSON" /><figcaption>Ejemplo JSON</figcaption>
+</figure>
+</section><section id="ejemplo-api" class="slide level2">
+<h2><span class="header-section-number">2.8</span> Ejemplo API</h2>
+<ul>
+<li><p><a href="http://jsonplaceholder.typicode.com/posts" class="uri">http://jsonplaceholder.typicode.com/posts</a></p></li>
+<li><p><a href="http://jsonplaceholder.typicode.com/posts/1/comments" class="uri">http://jsonplaceholder.typicode.com/posts/1/comments</a></p></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="http://lab.hakim.se/reveal-js//lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js//js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+transition: 'convex',
+
+        menu: {
+            // Specifies which side of the presentation the menu will
+            // be shown. Use 'left' or 'right'.
+            side: 'left',
+
+            // Add slide numbers to the titles in the slide list.
+            // Use 'true' or format string (same as reveal.js slide numbers)
+            numbers: false,
+
+            // Specifies which slide elements will be used for generating
+            // the slide titles in the menu. The default selects the first
+            // heading element found in the slide, but you can specify any
+            // valid css selector and the text from the first matching
+            // element will be used.
+            // Note: that a section data-menu-title attribute or an element
+            // with a menu-title class will take precedence over this option
+            titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+            // Hide slides from the menu that do not have a title.
+            // Set to 'true' to only list slides with titles.
+            hideMissingTitles: false,
+
+            // Add markers to the slide titles to indicate the
+            // progress through the presentation
+            markers: false,
+
+            // Specify custom panels to be included in the menu, by
+            // providing an array of objects with 'title', 'icon'
+            // properties, and either a 'src' or 'content' property.
+            custom: false,
+
+            // Specifies the themes that will be available in the themes
+            // menu panel. Set to 'false' to hide themes panel.
+            themes: [
+                { name: 'Black', theme: 'http://lab.hakim.se/reveal-js//css/theme/black.css' },
+                { name: 'White', theme: 'http://lab.hakim.se/reveal-js//css/theme/white.css' },
+                { name: 'League', theme: 'http://lab.hakim.se/reveal-js//css/theme/league.css' },
+                { name: 'Sky', theme: 'http://lab.hakim.se/reveal-js//css/theme/sky.css' },
+                { name: 'Beige', theme: 'http://lab.hakim.se/reveal-js//css/theme/beige.css' },
+                { name: 'Simple', theme: 'http://lab.hakim.se/reveal-js//css/theme/simple.css' },
+                { name: 'Serif', theme: 'http://lab.hakim.se/reveal-js//css/theme/serif.css' },
+                { name: 'Blood', theme: 'http://lab.hakim.se/reveal-js//css/theme/blood.css' },
+                { name: 'Night', theme: 'http://lab.hakim.se/reveal-js//css/theme/night.css' },
+                { name: 'Moon', theme: 'http://lab.hakim.se/reveal-js//css/theme/moon.css' },
+                { name: 'Solarized', theme: 'http://lab.hakim.se/reveal-js//css/theme/solarized.css' }
+            ],
+
+            // Specifies if the transitions menu panel will be shown.
+            transitions: true,
+
+            // Adds a menu button to the slides to open the menu panel.
+            // Set to 'false' to hide the button.
+            openButton: true,
+
+            // If 'true' allows the slide number in the presentation to
+            // open the menu panel. The reveal.js slideNumber option must
+            // be displayed for this to take effect
+            openSlideNumber: false,
+
+            // If true allows the user to open and navigate the menu using
+            // the keyboard. Standard keyboard interaction with reveal
+            // will be disabled while the menu is open.
+            keyboard: true
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js//lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js//plugin/zoom-js/zoom.js', async: true },
+          { src: 'http://lab.hakim.se/reveal-js//plugin/notes/notes.js', async: true },
+          //{ src: 'http://lab.hakim.se/reveal-js//plugin/search/search.js', async: true },
+          { src: 'https://denehyg.github.io/reveal.js-menu/plugin/reveal.js-menu//menu.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

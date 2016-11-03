@@ -80,6 +80,12 @@ multivaluados.
 
 - Permite el anidamiento de etiquetas.
 
+## Ejemplo API
+
+- <http://www.thomas-bayer.com/sqlrest/CUSTOMER/>
+
+- <http://www.thomas-bayer.com/sqlrest/CUSTOMER/3/>
+
 
 
 
@@ -232,7 +238,15 @@ ello se usa la construcción:
 <<div style="text-align:center">![CDATA]<cuenta>…</cuenta>]]>
 ~~~
 
+
+
+
+
 # Procesamiento de XML
+
+
+
+
 
 ## Ejemplo
 
@@ -366,14 +380,10 @@ documento con el **método ElementTree.write()**
 
 ## Explicar ejemplo modificar XML
 
-- Se va a modificar el documento XML de
-ejemplo:
-    - Se va añadir un nuevo atributo que indica el
-orden.
-    - Se va añadir un nuevo elemento que indica la
-editorial.
-    - Se va añadir un nuevo atributo que indica si hay
-ejemplares.
+- Se va a modificar el documento XML de ejemplo:
+    - Se va añadir un nuevo atributo que indica el orden.
+    - Se va añadir un nuevo elemento que indica la editorial.
+    - Se va añadir un nuevo atributo que indica si hay ejemplares.
 
 ## Ejemplo modificar XML
 
@@ -385,8 +395,7 @@ ejemplares.
 - También es posible eliminar elementos con el
 **método Element.remove()**.
 
-- Tomando como
-entrada la salida del ejemplo anterior se van a
+- Tomando como entrada la salida del ejemplo anterior se van a
 eliminar todos los elementos de tipo "Libro"
 que tengan un número de orden mayor que 3.
 

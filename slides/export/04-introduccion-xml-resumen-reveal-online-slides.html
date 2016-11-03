@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="pandoc">
+  <meta name="description" content="Introducción XML" />
+  <meta name="author" content="Adolfo Sanz De Diego">
+  <title>Introducción XML</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js//css/reveal.css">
+  <link rel="stylesheet" href="https://denehyg.github.io/reveal.js-menu/plugin/reveal.js-menu//menu.css">
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js//css/theme/league.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js//css/print/pdf.css' : 'http://lab.hakim.se/reveal-js//css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+
+  <style type="text/css">
+    code{
+      white-space: pre;
+    }
+    .reveal pre code {
+      background: rgba(255, 255, 255, 0.7);
+      color: rgba(0, 0, 0, 0.7);
+    }
+    .reveal section img {
+      margin: 15px 0px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+    strong {
+      color: #777
+    }
+    a:hover {
+      text-decoration: underline !important;
+    }
+    h1.title {
+      font-size: 350% !important;
+    }
+    h1 {
+      font-size: 250% !important;
+    }
+    h2 {
+      font-size: 150% !important;
+    }
+    h3 {
+      font-size: 100% !important;
+    }
+    @media print {
+      #only-print-parent { display: table !important; }
+      #only-print-child { display: table-cell !important; vertical-align: middle;}
+      h1.title { font-size: 400% !important;}
+      h1 { font-size: 300% !important; }
+      h2 { font-size: 200% !important; }
+      h3 { font-size: 150% !important; }
+    }
+  </style>
+  <!--[if lt IE 9]>
+  <script src="http://lab.hakim.se/reveal-js//lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="only-print-parent">
+    <div id="only-print-child">
+      <h1 class="title">Introducción XML</h2>
+      <h2 class="author">Adolfo Sanz De Diego</h2>
+      <h3 class="date">Noviembre 2016</h3>
+    </div>
+</section>
+
+<section><section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">1</span> Acerca de</h1></section><section id="autor" class="slide level2">
+<h2><span class="header-section-number">1.1</span> Autor</h2>
+<ul>
+<li><strong>Adolfo Sanz De Diego</strong>
+<ul>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es/">asanzdiego.blogspot.com.es</a></li>
+<li>Correo: <a href="mailto:asanzdiego@gmail.com">asanzdiego@gmail.com</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/">slideshare.net/asanzdiego</a></li>
+</ul></li>
+</ul>
+</section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">1.2</span> Licencia</h2>
+<ul>
+<li><strong>Copyright:</strong>
+<ul>
+<li>Antonio Sarasa Cabezuelo &lt;<a href="mailto:antoniosarasa@campusciff.net">antoniosarasa@campusciff.net</a>&gt;</li>
+</ul></li>
+</ul>
+</section><section id="fuente" class="slide level2">
+<h2><span class="header-section-number">1.3</span> Fuente</h2>
+<ul>
+<li>Las slides y sus fuentes las podéis encontrar en:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-intro-linux-web-sql-2016" class="uri">https://github.com/asanzdiego/curso-intro-linux-web-sql-2016</a></li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="introducción-a-xml" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Introducción a XML</h1></section><section id="qué-es" class="slide level2">
+<h2><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li><p>XML (Extensible Markup Language) es un metalenguaje que <strong>permite definir lenguajes de marcado</strong>.</p></li>
+<li><p>Los lenguajes de marcado permiten describir la estructura de los contenidos de un documento.</p></li>
+</ul>
+</section><section id="etiquetas" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Etiquetas</h2>
+<ul>
+<li><p>Un lenguaje de marcado está formado por un conjunto de etiquetas que se encierran entre <strong>corchetes angulares</strong>, &lt;&gt;, y se usan en pares.</p></li>
+<li><p>Cada par de etiquetas delimita el comienzo y el final de una porción de documento a la que se refiere la etiqueta. Por ejemplo:</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;asignatura&gt;</span>Bases de datos<span class="kw">&lt;/asignatura&gt;</span></code></pre></div>
+</section><section id="ejemplo-xml" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Ejemplo XML</h2>
+<figure>
+<img src="../img/04-introduccion-xml/04-introduccion-xml-01.png" alt="Ejemplo XML" /><figcaption>Ejemplo XML</figcaption>
+</figure>
+</section><section id="ventajas" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Ventajas</h2>
+<ul>
+<li><p>Permite que la información esté autodocumentada.</p></li>
+<li><p>Formato no rígido pues dispone de la capacidad de reconocer e ignorar nuevas etiquetas.</p></li>
+<li><p>Las etiquetas pueden aparecer varias veces facilitando la representación de atributos multivaluados.</p></li>
+<li><p>Permite el anidamiento de etiquetas.</p></li>
+</ul>
+</section><section id="ejemplo-api" class="slide level2">
+<h2><span class="header-section-number">2.5</span> Ejemplo API</h2>
+<ul>
+<li><p><a href="http://www.thomas-bayer.com/sqlrest/CUSTOMER/" class="uri">http://www.thomas-bayer.com/sqlrest/CUSTOMER/</a></p></li>
+<li><p><a href="http://www.thomas-bayer.com/sqlrest/CUSTOMER/3/" class="uri">http://www.thomas-bayer.com/sqlrest/CUSTOMER/3/</a></p></li>
+</ul>
+</section></section>
+<section><section id="estructura-básica" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Estructura básica</h1></section><section id="prologo" class="slide level2">
+<h2><span class="header-section-number">3.1</span> Prologo</h2>
+<ul>
+<li><p>Consta de dos declaraciones:</p>
+<ul>
+<li>La declaración XML que indica <strong>la versión de XML utilizada y el tipo de codificación de caracteres</strong>.
+<?xml version="1.0" encoding="UTF-8"?></li>
+<li>La declaración de tipo de documento que asocia el documento a <strong>una DTD o XSD</strong> respecto a la cual el documento es conforme.</li>
+</ul></li>
+</ul>
+</section><section id="elementos" class="slide level2">
+<h2><span class="header-section-number">3.2</span> Elementos</h2>
+<ul>
+<li>Es un par de etiquetas de comienzo y final coincidentes que delimita una <strong>porción de información</strong>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;t</span><span class="er">ítulo</span><span class="kw">&gt;</span>introducción<span class="kw">&lt;/t</span><span class="er">ítulo</span><span class="kw">&gt;</span></code></pre></div>
+</section><section id="elementos-vacíos" class="slide level2">
+<h2><span class="header-section-number">3.3</span> Elementos vacíos</h2>
+<ul>
+<li>Existen elementos vacíos que no contienen contenido.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Nombre</span><span class="ot"> etiqueta</span><span class="er">/&gt;</span>
+<span class="er">&lt;Nombre</span> <span class="er">etiqueta&gt;&lt;/Nombre</span> <span class="er">etiqueta&gt;</span></code></pre></div>
+</section><section id="elementos-anidados" class="slide level2">
+<h2><span class="header-section-number">3.4</span> Elementos anidados</h2>
+<ul>
+<li><p>Los elementos <strong>se pueden anidar</strong>:</p>
+<ul>
+<li><p>Un texto aparece en el contexto de un elemento si aparece entre la etiqueta de inicio y final de dicho elemento.</p></li>
+<li><p>Las etiquetas se anidan correctamente si toda etiqueta de inicio tiene un única etiqueta de finalización coincidente que está en el contexto del mismo elemento padre.</p></li>
+</ul></li>
+<li><p>Un elemento puede aparecer varias veces en un documento XML.</p></li>
+</ul>
+</section><section id="ejemplo-anidado" class="slide level2">
+<h2><span class="header-section-number">3.5</span> Ejemplo anidado</h2>
+<figure>
+<img src="../img/04-introduccion-xml/04-introduccion-xml-02.png" alt="Elementos anidados" /><figcaption>Elementos anidados</figcaption>
+</figure>
+</section><section id="atributos" class="slide level2">
+<h2><span class="header-section-number">3.6</span> Atributos</h2>
+<ul>
+<li>Las etiquetas de los elementos pueden incluir 1 o más <strong>atributos que representan propiedades</strong> de los elementos de la forma Nombre atributo=&quot;Valor atributo&quot;</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;cuenta</span><span class="ot"> tipo_cuenta=</span><span class="st">&quot;corriente&quot;</span><span class="kw">&gt;</span></code></pre></div>
+<ul>
+<li>Los atributos pueden aparecer solamente una vez en una etiqueta dada.</li>
+</ul>
+</section><section id="mezcla" class="slide level2">
+<h2><span class="header-section-number">3.7</span> Mezcla</h2>
+<ul>
+<li>El texto en un documento XML puede estar mezclado con los subelementos de otro elemento.</li>
+</ul>
+<figure>
+<img src="../img/04-introduccion-xml/04-introduccion-xml-03.png" alt="Mezcla texto con subelementos" /><figcaption>Mezcla texto con subelementos</figcaption>
+</figure>
+</section><section id="raíz" class="slide level2">
+<h2><span class="header-section-number">3.8</span> Raíz</h2>
+<ul>
+<li><p>Todo documento XML tiene <strong>un único elemento raíz</strong> que engloba al resto de elementos del documento.</p></li>
+<li><p>En el primer ejemplo el elemento <banco> era la raíz.</p></li>
+</ul>
+</section><section id="comentarios" class="slide level2">
+<h2><span class="header-section-number">3.9</span> Comentarios</h2>
+<ul>
+<li><p>Es un texto que se escribe <strong>entre &lt;!–- y --&gt;</strong></p></li>
+<li><p>La cadena &quot;--&quot; no puede aparecer dentro de un comentario.</p></li>
+<li><p>Los comentarios pueden aparecer en cualquier sitio salvo dentro de declaraciones, etiquetas y dentro de otros comentarios.</p></li>
+</ul>
+</section><section id="cdata" class="slide level2">
+<h2><span class="header-section-number">3.10</span> CDATA</h2>
+<ul>
+<li>A veces es necesario <strong>almacenar valores que contienen etiquetas sin que se interpreten como etiquetas XML</strong>, es decir como texto normal. Para ello se usa la construcción:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="er">&lt;</span>![CDATA]<span class="kw">&lt;cuenta&gt;</span>…<span class="kw">&lt;/cuenta&gt;</span>]]&gt;</code></pre></div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="http://lab.hakim.se/reveal-js//lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js//js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+transition: 'convex',
+
+        menu: {
+            // Specifies which side of the presentation the menu will
+            // be shown. Use 'left' or 'right'.
+            side: 'left',
+
+            // Add slide numbers to the titles in the slide list.
+            // Use 'true' or format string (same as reveal.js slide numbers)
+            numbers: false,
+
+            // Specifies which slide elements will be used for generating
+            // the slide titles in the menu. The default selects the first
+            // heading element found in the slide, but you can specify any
+            // valid css selector and the text from the first matching
+            // element will be used.
+            // Note: that a section data-menu-title attribute or an element
+            // with a menu-title class will take precedence over this option
+            titleSelector: 'h1, h2, h3, h4, h5, h6',
+
+            // Hide slides from the menu that do not have a title.
+            // Set to 'true' to only list slides with titles.
+            hideMissingTitles: false,
+
+            // Add markers to the slide titles to indicate the
+            // progress through the presentation
+            markers: false,
+
+            // Specify custom panels to be included in the menu, by
+            // providing an array of objects with 'title', 'icon'
+            // properties, and either a 'src' or 'content' property.
+            custom: false,
+
+            // Specifies the themes that will be available in the themes
+            // menu panel. Set to 'false' to hide themes panel.
+            themes: [
+                { name: 'Black', theme: 'http://lab.hakim.se/reveal-js//css/theme/black.css' },
+                { name: 'White', theme: 'http://lab.hakim.se/reveal-js//css/theme/white.css' },
+                { name: 'League', theme: 'http://lab.hakim.se/reveal-js//css/theme/league.css' },
+                { name: 'Sky', theme: 'http://lab.hakim.se/reveal-js//css/theme/sky.css' },
+                { name: 'Beige', theme: 'http://lab.hakim.se/reveal-js//css/theme/beige.css' },
+                { name: 'Simple', theme: 'http://lab.hakim.se/reveal-js//css/theme/simple.css' },
+                { name: 'Serif', theme: 'http://lab.hakim.se/reveal-js//css/theme/serif.css' },
+                { name: 'Blood', theme: 'http://lab.hakim.se/reveal-js//css/theme/blood.css' },
+                { name: 'Night', theme: 'http://lab.hakim.se/reveal-js//css/theme/night.css' },
+                { name: 'Moon', theme: 'http://lab.hakim.se/reveal-js//css/theme/moon.css' },
+                { name: 'Solarized', theme: 'http://lab.hakim.se/reveal-js//css/theme/solarized.css' }
+            ],
+
+            // Specifies if the transitions menu panel will be shown.
+            transitions: true,
+
+            // Adds a menu button to the slides to open the menu panel.
+            // Set to 'false' to hide the button.
+            openButton: true,
+
+            // If 'true' allows the slide number in the presentation to
+            // open the menu panel. The reveal.js slideNumber option must
+            // be displayed for this to take effect
+            openSlideNumber: false,
+
+            // If true allows the user to open and navigate the menu using
+            // the keyboard. Standard keyboard interaction with reveal
+            // will be disabled while the menu is open.
+            keyboard: true
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js//lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js//plugin/zoom-js/zoom.js', async: true },
+          { src: 'http://lab.hakim.se/reveal-js//plugin/notes/notes.js', async: true },
+          //{ src: 'http://lab.hakim.se/reveal-js//plugin/search/search.js', async: true },
+          { src: 'https://denehyg.github.io/reveal.js-menu/plugin/reveal.js-menu//menu.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

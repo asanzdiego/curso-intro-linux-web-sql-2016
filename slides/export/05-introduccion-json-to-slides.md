@@ -96,6 +96,12 @@ manera:
 
 ![Ejemplo JSON](../img/05-introduccion-json/05-introduccion-json-02.png)
 
+## Ejemplo API
+
+- <http://jsonplaceholder.typicode.com/posts>
+
+- <http://jsonplaceholder.typicode.com/posts/1/comments>
+
 
 
 

@@ -24,7 +24,7 @@
 
 - **Copyright:**
     - Antonio Sarasa Cabezuelo <[antoniosarasa@campusciff.net](mailto:antoniosarasa@campusciff.net)>
-    
+
 ## Fuente
 
 - Las slides y sus fuentes las podéis encontrar en:
@@ -253,7 +253,7 @@ condición.
 - **i**: no se distinguen mayúsculas y minúsculas.
 - **l**: escribe los nombres de los ficheros que contienen
 líneas buscadas.
-- **n**: cada línea es precedida por su número en el
+- **n**: cada línea es precedida por su número en el fichero.
 
 ## Mas opciones grep
 

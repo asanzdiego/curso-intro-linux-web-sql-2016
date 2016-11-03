@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" > <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" > <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" > <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="generator" content="pandoc" />
+  <meta name="description" content="Introducción XML" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Introducción XML</title>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+
+  <!-- deck core css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/core/deck.core.css">
+
+  <!-- deck extensions css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/status/deck.status.css">
+
+  <!-- deck slide theme css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/swiss.css">
+  <!--
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/neon.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/swiss.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/web-2.0.css">
+  -->
+
+  <!-- deck slide transition css -->
+  <link rel="stylesheet" href="../lib/deck.js-transition-cube-master/cube.css">
+  <!--
+  <link rel="stylesheet" href="../lib/deck.js-transition-cube-master/cube.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/fade.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/horizontal-slide.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/vertical-slide.css">
+  -->
+
+  <!-- custom css just for this page -->
+  <style>
+    figcaption {
+      display: none;
+      visibility:hidden;
+    }
+
+    #titlepage, #documentauthor, #documentdate {
+      text-align: center;
+    }
+
+    #titlepage {
+      font-size: 5.25em;
+      padding-top: 15%;
+    }
+
+    #documentauthor {
+      font-size: 2.25em;
+    }
+
+    #documentdate {
+      font-size: 1.25em;
+    }
+  </style>
+
+  <!-- modernizr deck js  -->
+  <script src="../lib/deck.js-master/modernizr.custom.js"></script>
+
+</head>
+<body class="deck-container">
+<section class="slide">
+  <h2 id="titlepage">Introducción XML</h2>
+  <h3 id="documentauthor">Adolfo Sanz De Diego</h3>
+  <h4 id="documentdate">Noviembre 2016</h4>
+</section>
+
+<section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">1</span> Acerca de</h1></section><section id="autor" class="slide level2">
+<h2><span class="header-section-number">1.1</span> Autor</h2>
+<ul>
+<li><strong>Adolfo Sanz De Diego</strong>
+<ul>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es/">asanzdiego.blogspot.com.es</a></li>
+<li>Correo: <a href="mailto:asanzdiego@gmail.com">asanzdiego@gmail.com</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/">slideshare.net/asanzdiego</a></li>
+</ul></li>
+</ul>
+</section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">1.2</span> Licencia</h2>
+<ul>
+<li><strong>Copyright:</strong>
+<ul>
+<li>Antonio Sarasa Cabezuelo &lt;<a href="mailto:antoniosarasa@campusciff.net">antoniosarasa@campusciff.net</a>&gt;</li>
+</ul></li>
+</ul>
+</section><section id="fuente" class="slide level2">
+<h2><span class="header-section-number">1.3</span> Fuente</h2>
+<ul>
+<li>Las slides y sus fuentes las podéis encontrar en:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-intro-linux-web-sql-2016" class="uri">https://github.com/asanzdiego/curso-intro-linux-web-sql-2016</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="introducción-a-xml" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Introducción a XML</h1></section><section id="qué-es" class="slide level2">
+<h2><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li><p>XML (Extensible Markup Language) es un metalenguaje que <strong>permite definir lenguajes de marcado</strong>.</p></li>
+<li><p>Los lenguajes de marcado permiten describir la estructura de los contenidos de un documento.</p></li>
+</ul>
+</section><section id="etiquetas" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Etiquetas</h2>
+<ul>
+<li><p>Un lenguaje de marcado está formado por un conjunto de etiquetas que se encierran entre <strong>corchetes angulares</strong>, &lt;&gt;, y se usan en pares.</p></li>
+<li><p>Cada par de etiquetas delimita el comienzo y el final de una porción de documento a la que se refiere la etiqueta. Por ejemplo:</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;asignatura&gt;</span>Bases de datos<span class="kw">&lt;/asignatura&gt;</span></code></pre></div>
+</section><section id="ejemplo-xml" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Ejemplo XML</h2>
+<figure>
+<img src="../img/04-introduccion-xml/04-introduccion-xml-01.png" alt="Ejemplo XML" /><figcaption>Ejemplo XML</figcaption>
+</figure>
+</section><section id="ventajas" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Ventajas</h2>
+<ul>
+<li><p>Permite que la información esté autodocumentada.</p></li>
+<li><p>Formato no rígido pues dispone de la capacidad de reconocer e ignorar nuevas etiquetas.</p></li>
+<li><p>Las etiquetas pueden aparecer varias veces facilitando la representación de atributos multivaluados.</p></li>
+<li><p>Permite el anidamiento de etiquetas.</p></li>
+</ul>
+</section><section id="ejemplo-api" class="slide level2">
+<h2><span class="header-section-number">2.5</span> Ejemplo API</h2>
+<ul>
+<li><p><a href="http://www.thomas-bayer.com/sqlrest/CUSTOMER/" class="uri">http://www.thomas-bayer.com/sqlrest/CUSTOMER/</a></p></li>
+<li><p><a href="http://www.thomas-bayer.com/sqlrest/CUSTOMER/3/" class="uri">http://www.thomas-bayer.com/sqlrest/CUSTOMER/3/</a></p></li>
+</ul>
+</section>
+<section id="estructura-básica" class="titleslide slide level1"><h1><span class="header-section-number">3</span> Estructura básica</h1></section><section id="prologo" class="slide level2">
+<h2><span class="header-section-number">3.1</span> Prologo</h2>
+<ul>
+<li><p>Consta de dos declaraciones:</p>
+<ul>
+<li>La declaración XML que indica <strong>la versión de XML utilizada y el tipo de codificación de caracteres</strong>.
+<?xml version="1.0" encoding="UTF-8"?></li>
+<li>La declaración de tipo de documento que asocia el documento a <strong>una DTD o XSD</strong> respecto a la cual el documento es conforme.</li>
+</ul></li>
+</ul>
+</section><section id="elementos" class="slide level2">
+<h2><span class="header-section-number">3.2</span> Elementos</h2>
+<ul>
+<li>Es un par de etiquetas de comienzo y final coincidentes que delimita una <strong>porción de información</strong>.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;t</span><span class="er">ítulo</span><span class="kw">&gt;</span>introducción<span class="kw">&lt;/t</span><span class="er">ítulo</span><span class="kw">&gt;</span></code></pre></div>
+</section><section id="elementos-vacíos" class="slide level2">
+<h2><span class="header-section-number">3.3</span> Elementos vacíos</h2>
+<ul>
+<li>Existen elementos vacíos que no contienen contenido.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;Nombre</span><span class="ot"> etiqueta</span><span class="er">/&gt;</span>
+<span class="er">&lt;Nombre</span> <span class="er">etiqueta&gt;&lt;/Nombre</span> <span class="er">etiqueta&gt;</span></code></pre></div>
+</section><section id="elementos-anidados" class="slide level2">
+<h2><span class="header-section-number">3.4</span> Elementos anidados</h2>
+<ul>
+<li><p>Los elementos <strong>se pueden anidar</strong>:</p>
+<ul>
+<li><p>Un texto aparece en el contexto de un elemento si aparece entre la etiqueta de inicio y final de dicho elemento.</p></li>
+<li><p>Las etiquetas se anidan correctamente si toda etiqueta de inicio tiene un única etiqueta de finalización coincidente que está en el contexto del mismo elemento padre.</p></li>
+</ul></li>
+<li><p>Un elemento puede aparecer varias veces en un documento XML.</p></li>
+</ul>
+</section><section id="ejemplo-anidado" class="slide level2">
+<h2><span class="header-section-number">3.5</span> Ejemplo anidado</h2>
+<figure>
+<img src="../img/04-introduccion-xml/04-introduccion-xml-02.png" alt="Elementos anidados" /><figcaption>Elementos anidados</figcaption>
+</figure>
+</section><section id="atributos" class="slide level2">
+<h2><span class="header-section-number">3.6</span> Atributos</h2>
+<ul>
+<li>Las etiquetas de los elementos pueden incluir 1 o más <strong>atributos que representan propiedades</strong> de los elementos de la forma Nombre atributo=&quot;Valor atributo&quot;</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;cuenta</span><span class="ot"> tipo_cuenta=</span><span class="st">&quot;corriente&quot;</span><span class="kw">&gt;</span></code></pre></div>
+<ul>
+<li>Los atributos pueden aparecer solamente una vez en una etiqueta dada.</li>
+</ul>
+</section><section id="mezcla" class="slide level2">
+<h2><span class="header-section-number">3.7</span> Mezcla</h2>
+<ul>
+<li>El texto en un documento XML puede estar mezclado con los subelementos de otro elemento.</li>
+</ul>
+<figure>
+<img src="../img/04-introduccion-xml/04-introduccion-xml-03.png" alt="Mezcla texto con subelementos" /><figcaption>Mezcla texto con subelementos</figcaption>
+</figure>
+</section><section id="raíz" class="slide level2">
+<h2><span class="header-section-number">3.8</span> Raíz</h2>
+<ul>
+<li><p>Todo documento XML tiene <strong>un único elemento raíz</strong> que engloba al resto de elementos del documento.</p></li>
+<li><p>En el primer ejemplo el elemento <banco> era la raíz.</p></li>
+</ul>
+</section><section id="comentarios" class="slide level2">
+<h2><span class="header-section-number">3.9</span> Comentarios</h2>
+<ul>
+<li><p>Es un texto que se escribe <strong>entre &lt;!–- y --&gt;</strong></p></li>
+<li><p>La cadena &quot;--&quot; no puede aparecer dentro de un comentario.</p></li>
+<li><p>Los comentarios pueden aparecer en cualquier sitio salvo dentro de declaraciones, etiquetas y dentro de otros comentarios.</p></li>
+</ul>
+</section><section id="cdata" class="slide level2">
+<h2><span class="header-section-number">3.10</span> CDATA</h2>
+<ul>
+<li>A veces es necesario <strong>almacenar valores que contienen etiquetas sin que se interpreten como etiquetas XML</strong>, es decir como texto normal. Para ello se usa la construcción:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="er">&lt;</span>![CDATA]<span class="kw">&lt;cuenta&gt;</span>…<span class="kw">&lt;/cuenta&gt;</span>]]&gt;</code></pre></div>
+</section>
+
+<!--footer id="footer">
+  <h4 class="author"> Adolfo Sanz De Diego  - Noviembre 2016</h4>
+</footer-->
+
+<!-- deck goto extension html -->
+<form action="." method="get" class="goto-form">
+  <label for="goto-slide">Go to slide:</label>
+  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  <datalist id="goto-datalist"></datalist>
+  <input type="submit" value="Go">
+</form>
+
+<!-- deck navigation extension html -->
+<div aria-role="navigation">
+  <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+  <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+</div>
+
+<!-- deck status extension html -->
+<p class="deck-status" aria-role="status">
+  <span class="deck-status-current"></span>
+  /
+  <span class="deck-status-total"></span>
+</p>
+
+<!-- jquery  -->
+<script src="../lib/deck.js-master/jquery.min.js"></script>
+
+<!-- deck core js  -->
+<script src="../lib/deck.js-master/core/deck.core.js"></script>
+
+<!-- deck extension js -->
+<script src="../lib/deck.js-master/extensions/goto/deck.goto.js"></script>
+<script src="../lib/deck.js-master/extensions/menu/deck.menu.js"></script>
+<script src="../lib/deck.js-master/extensions/navigation/deck.navigation.js"></script>
+<script src="../lib/deck.js-master/extensions/scale/deck.scale.js"></script>
+<script src="../lib/deck.js-master/extensions/status/deck.status.js"></script>
+<script src="../lib/deck.search.js-master/search/deck.search.js"></script>
+
+<!-- Initialize the deck. -->
+<script>
+$(function() {
+    $.deck('.slide');
+});
+</script>
+
+</body>
+</html>

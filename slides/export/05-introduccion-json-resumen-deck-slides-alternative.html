@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" > <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" > <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" > <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="generator" content="pandoc" />
+  <meta name="description" content="Introducción JSON" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Introducción JSON</title>
+
+  <!-- deck core css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/core/deck.core.css">
+
+  <!-- deck extensions css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/extensions/status/deck.status.css">
+
+  <!-- deck slide theme css -->
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/swiss.css">
+  <!--
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/neon.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/swiss.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/style/web-2.0.css">
+  -->
+
+  <!-- deck slide transition css -->
+  <link rel="stylesheet" href="../lib/deck.js-transition-cube-master/cube.css">
+  <!--
+  <link rel="stylesheet" href="../lib/deck.js-transition-cube-master/cube.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/fade.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/horizontal-slide.css">
+  <link rel="stylesheet" href="../lib/deck.js-master/themes/transition/vertical-slide.css">
+  -->
+
+  <!-- custom css just for this page -->
+  <style>
+    figcaption {
+      display: none;
+      visibility:hidden;
+    }
+
+    #titlepage, #documentauthor, #documentdate {
+      text-align: center;
+    }
+
+    #titlepage {
+      font-size: 5.25em;
+      padding-top: 15%;
+    }
+
+    #documentauthor {
+      font-size: 2.25em;
+    }
+
+    #documentdate {
+      font-size: 1.25em;
+    }
+  </style>
+
+  <!-- modernizr deck js  -->
+  <script src="../lib/deck.js-master/modernizr.custom.js"></script>
+
+</head>
+<body class="deck-container">
+<section class="slide">
+  <h2 id="titlepage">Introducción JSON</h2>
+  <h3 id="documentauthor">Adolfo Sanz De Diego</h3>
+  <h4 id="documentdate">Noviembre 2016</h4>
+</section>
+
+<section id="acerca-de" class="titleslide slide level1"><h1><span class="header-section-number">1</span> Acerca de</h1></section><section id="autor" class="slide level2">
+<h2><span class="header-section-number">1.1</span> Autor</h2>
+<ul>
+<li><strong>Adolfo Sanz De Diego</strong>
+<ul>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es/">asanzdiego.blogspot.com.es</a></li>
+<li>Correo: <a href="mailto:asanzdiego@gmail.com">asanzdiego@gmail.com</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/">slideshare.net/asanzdiego</a></li>
+</ul></li>
+</ul>
+</section><section id="licencia" class="slide level2">
+<h2><span class="header-section-number">1.2</span> Licencia</h2>
+<ul>
+<li><strong>Copyright:</strong>
+<ul>
+<li>Antonio Sarasa Cabezuelo &lt;<a href="mailto:antoniosarasa@campusciff.net">antoniosarasa@campusciff.net</a>&gt;</li>
+</ul></li>
+</ul>
+</section><section id="fuente" class="slide level2">
+<h2><span class="header-section-number">1.3</span> Fuente</h2>
+<ul>
+<li>Las slides y sus fuentes las podéis encontrar en:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-intro-linux-web-sql-2016" class="uri">https://github.com/asanzdiego/curso-intro-linux-web-sql-2016</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="introducción-a-json" class="titleslide slide level1"><h1><span class="header-section-number">2</span> Introducción a JSON</h1></section><section id="qué-es" class="slide level2">
+<h2><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li>JSON (<strong>JavaScript Object Notation</strong>) es un formato de datos que se caracteriza:
+<ul>
+<li>Está basado en JavaScript.</li>
+<li>Es utilizado para el intercambio de datos.</li>
+<li>Es utilizado por muchas APIs de sitios web tales como Facebook, Twitter,... para devolver su contenido.</li>
+<li>Es independiente del lenguaje</li>
+<li>Los archivos tienen extensión .json</li>
+</ul></li>
+</ul>
+</section><section id="parejas-clavevalor" class="slide level2">
+<h2><span class="header-section-number">2.2</span> Parejas clave=valor</h2>
+<ul>
+<li>JSON representa objetos de manera textual mediante <strong>parejas clave=valor</strong>,</li>
+</ul>
+<figure>
+<img src="../img/05-introduccion-json/05-introduccion-json-01.png" alt="Ejemplo JSON" /><figcaption>Ejemplo JSON</figcaption>
+</figure>
+</section><section id="sintaxis-json" class="slide level2">
+<h2><span class="header-section-number">2.3</span> Sintaxis JSON</h2>
+<ul>
+<li><p>Un objeto se representa como una secuencia de parejas clave=valor encerradas entre llaves { y }.</p></li>
+<li><p>Las claves son cadenas de texto entre comillas &quot; y &quot;.</p></li>
+</ul>
+</section><section id="valores-json" class="slide level2">
+<h2><span class="header-section-number">2.4</span> Valores JSON</h2>
+<ul>
+<li>Tipos básicos: <strong>cadena, número, booleano, null</strong></li>
+<li><strong>Arrays</strong> de valores: entre corchetes [ y ]</li>
+<li>Otros <strong>objetos</strong> JSON: entre llaves { y }</li>
+</ul>
+</section><section id="ejemplo-json-i" class="slide level2">
+<h2><span class="header-section-number">2.5</span> Ejemplo JSON (I)</h2>
+<ul>
+<li>Considerar el siguiente ejemplo dónde se quiere representar la ficha de un estudiante con sus datos personales y asignaturas matriculadas:
+<ul>
+<li>Nombre=&quot;Pepito Pérez&quot;</li>
+<li>DNI=&quot;517899R&quot;</li>
+<li>Edad=&quot;22&quot;</li>
+</ul></li>
+</ul>
+</section><section id="ejemplo-json-ii" class="slide level2">
+<h2><span class="header-section-number">2.6</span> Ejemplo JSON (II)</h2>
+<ul>
+<li>Asignaturas matriculadas:
+<ul>
+<li>Obligatorias: Sistemas Operativos, Compiladores, y Bases de Datos.</li>
+<li>Optativas: Bases de Datos NoSQL, Minería de Datos, Programación Lógica.</li>
+<li>Libre Elección: Ajedrez, Música Clásica</li>
+</ul></li>
+</ul>
+</section><section id="ejemplo-json-iii" class="slide level2">
+<h2><span class="header-section-number">2.7</span> Ejemplo JSON (III)</h2>
+<ul>
+<li>La ficha de información se puede representar en un documento JSON de la siguiente manera:</li>
+</ul>
+<figure>
+<img src="../img/05-introduccion-json/05-introduccion-json-02.png" alt="Ejemplo JSON" /><figcaption>Ejemplo JSON</figcaption>
+</figure>
+</section><section id="ejemplo-api" class="slide level2">
+<h2><span class="header-section-number">2.8</span> Ejemplo API</h2>
+<ul>
+<li><p><a href="http://jsonplaceholder.typicode.com/posts" class="uri">http://jsonplaceholder.typicode.com/posts</a></p></li>
+<li><p><a href="http://jsonplaceholder.typicode.com/posts/1/comments" class="uri">http://jsonplaceholder.typicode.com/posts/1/comments</a></p></li>
+</ul>
+</section>
+
+<!--footer id="footer">
+  <h4 class="author"> Adolfo Sanz De Diego  - Noviembre 2016</h4>
+</footer-->
+
+<!-- deck goto extension html -->
+<form action="." method="get" class="goto-form">
+  <label for="goto-slide">Go to slide:</label>
+  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  <datalist id="goto-datalist"></datalist>
+  <input type="submit" value="Go">
+</form>
+
+<!-- deck navigation extension html -->
+<div aria-role="navigation">
+  <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+  <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+</div>
+
+<!-- deck status extension html -->
+<p class="deck-status" aria-role="status">
+  <span class="deck-status-current"></span>
+  /
+  <span class="deck-status-total"></span>
+</p>
+
+<!-- jquery  -->
+<script src="../lib/deck.js-master/jquery.min.js"></script>
+
+<!-- deck core js  -->
+<script src="../lib/deck.js-master/core/deck.core.js"></script>
+
+<!-- deck extension js -->
+<script src="../lib/deck.js-master/extensions/goto/deck.goto.js"></script>
+<script src="../lib/deck.js-master/extensions/menu/deck.menu.js"></script>
+<script src="../lib/deck.js-master/extensions/navigation/deck.navigation.js"></script>
+<script src="../lib/deck.js-master/extensions/scale/deck.scale.js"></script>
+<script src="../lib/deck.js-master/extensions/status/deck.status.js"></script>
+<script src="../lib/deck.search.js-master/search/deck.search.js"></script>
+
+<!-- Initialize the deck. -->
+<script>
+$(function() {
+    $.deck('.slide');
+});
+</script>
+
+</body>
+</html>

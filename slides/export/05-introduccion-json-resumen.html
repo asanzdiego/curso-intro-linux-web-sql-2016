@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="description" content="Introducción JSON" />
+  <meta name="author" content="Adolfo Sanz De Diego" />
+  <title>Introducción JSON</title>
+  <style type="text/css">code{white-space: pre; background-color: lightgrey;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Introducción JSON</h1>
+<h2 class="author">Adolfo Sanz De Diego</h2>
+<h3 class="date">Noviembre 2016</h3>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#acerca-de"><span class="toc-section-number">1</span> Acerca de</a><ul>
+<li><a href="#autor"><span class="toc-section-number">1.1</span> Autor</a></li>
+<li><a href="#licencia"><span class="toc-section-number">1.2</span> Licencia</a></li>
+<li><a href="#fuente"><span class="toc-section-number">1.3</span> Fuente</a></li>
+</ul></li>
+<li><a href="#introducción-a-json"><span class="toc-section-number">2</span> Introducción a JSON</a><ul>
+<li><a href="#qué-es"><span class="toc-section-number">2.1</span> ¿Qué es?</a></li>
+<li><a href="#parejas-clavevalor"><span class="toc-section-number">2.2</span> Parejas clave=valor</a></li>
+<li><a href="#sintaxis-json"><span class="toc-section-number">2.3</span> Sintaxis JSON</a></li>
+<li><a href="#valores-json"><span class="toc-section-number">2.4</span> Valores JSON</a></li>
+<li><a href="#ejemplo-json"><span class="toc-section-number">2.5</span> Ejemplo JSON</a></li>
+<li><a href="#ejemplo-api"><span class="toc-section-number">2.6</span> Ejemplo API</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="acerca-de"><span class="header-section-number">1</span> Acerca de</h1>
+<h2 id="autor"><span class="header-section-number">1.1</span> Autor</h2>
+<ul>
+<li><strong>Adolfo Sanz De Diego</strong>
+<ul>
+<li>Blog: <a href="http://asanzdiego.blogspot.com.es/">asanzdiego.blogspot.com.es</a></li>
+<li>Correo: <a href="mailto:asanzdiego@gmail.com">asanzdiego@gmail.com</a></li>
+<li>GitHub: <a href="http://github.com/asanzdiego">github.com/asanzdiego</a></li>
+<li>Twitter: <a href="http://twitter.com/asanzdiego">twitter.com/asanzdiego</a></li>
+<li>LinkedIn: <a href="http://www.linkedin.com/in/asanzdiego">in/asanzdiego</a></li>
+<li>SlideShare: <a href="http://www.slideshare.net/asanzdiego/">slideshare.net/asanzdiego</a></li>
+</ul></li>
+</ul>
+<h2 id="licencia"><span class="header-section-number">1.2</span> Licencia</h2>
+<ul>
+<li><strong>Copyright:</strong>
+<ul>
+<li>Antonio Sarasa Cabezuelo &lt;<a href="mailto:antoniosarasa@campusciff.net">antoniosarasa@campusciff.net</a>&gt;</li>
+</ul></li>
+</ul>
+<h2 id="fuente"><span class="header-section-number">1.3</span> Fuente</h2>
+<ul>
+<li>Las slides y sus fuentes las podéis encontrar en:
+<ul>
+<li><a href="https://github.com/asanzdiego/curso-intro-linux-web-sql-2016" class="uri">https://github.com/asanzdiego/curso-intro-linux-web-sql-2016</a></li>
+</ul></li>
+</ul>
+<h1 id="introducción-a-json"><span class="header-section-number">2</span> Introducción a JSON</h1>
+<h2 id="qué-es"><span class="header-section-number">2.1</span> ¿Qué es?</h2>
+<ul>
+<li>JSON (<strong>JavaScript Object Notation</strong>) es un formato de datos que se caracteriza:
+<ul>
+<li>Está basado en JavaScript.</li>
+<li>Es utilizado para el intercambio de datos.</li>
+<li>Es utilizado por muchas APIs de sitios web tales como Facebook, Twitter,... para devolver su contenido.</li>
+<li>Es independiente del lenguaje</li>
+<li>Los archivos tienen extensión .json</li>
+</ul></li>
+</ul>
+<h2 id="parejas-clavevalor"><span class="header-section-number">2.2</span> Parejas clave=valor</h2>
+<ul>
+<li>JSON representa objetos de manera textual mediante <strong>parejas clave=valor</strong>,</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/05-introduccion-json/05-introduccion-json-01.png" alt="Ejemplo JSON" />
+</div>
+<h2 id="sintaxis-json"><span class="header-section-number">2.3</span> Sintaxis JSON</h2>
+<ul>
+<li><p>Un objeto se representa como una secuencia de parejas clave=valor encerradas entre llaves { y }.</p></li>
+<li><p>Las claves son cadenas de texto entre comillas &quot; y &quot;.</p></li>
+</ul>
+<h2 id="valores-json"><span class="header-section-number">2.4</span> Valores JSON</h2>
+<ul>
+<li>Tipos básicos: <strong>cadena, número, booleano, null</strong></li>
+<li><strong>Arrays</strong> de valores: entre corchetes [ y ]</li>
+<li>Otros <strong>objetos</strong> JSON: entre llaves { y }</li>
+</ul>
+<h2 id="ejemplo-json"><span class="header-section-number">2.5</span> Ejemplo JSON</h2>
+<ul>
+<li>Considerar el siguiente ejemplo dónde se quiere representar la ficha de un estudiante con sus datos personales y asignaturas matriculadas:
+<ul>
+<li>Nombre=&quot;Pepito Pérez&quot;</li>
+<li>DNI=&quot;517899R&quot;</li>
+<li>Edad=&quot;22&quot;</li>
+</ul></li>
+<li>Asignaturas matriculadas:
+<ul>
+<li>Obligatorias: Sistemas Operativos, Compiladores, y Bases de Datos.</li>
+<li>Optativas: Bases de Datos NoSQL, Minería de Datos, Programación Lógica.</li>
+<li>Libre Elección: Ajedrez, Música Clásica</li>
+</ul></li>
+<li>La ficha de información se puede representar en un documento JSON de la siguiente manera:</li>
+</ul>
+<div style="text-align:center">
+<img src="../img/05-introduccion-json/05-introduccion-json-02.png" alt="Ejemplo JSON" />
+</div>
+<h2 id="ejemplo-api"><span class="header-section-number">2.6</span> Ejemplo API</h2>
+<ul>
+<li><p><a href="http://jsonplaceholder.typicode.com/posts" class="uri">http://jsonplaceholder.typicode.com/posts</a></p></li>
+<li><p><a href="http://jsonplaceholder.typicode.com/posts/1/comments" class="uri">http://jsonplaceholder.typicode.com/posts/1/comments</a></p></li>
+</ul>
+</body>
+</html>
