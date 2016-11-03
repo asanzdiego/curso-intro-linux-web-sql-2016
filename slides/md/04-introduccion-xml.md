@@ -228,7 +228,15 @@ ello se usa la construcción:
 <![CDATA]<cuenta>…</cuenta>]]>
 ~~~
 
+
+
+
+
 # Procesamiento de XML
+
+
+
+
 
 ## Ejemplo
 

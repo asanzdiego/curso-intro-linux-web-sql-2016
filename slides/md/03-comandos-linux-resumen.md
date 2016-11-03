@@ -84,7 +84,6 @@ al actual.
 - **ls -c** muestra ordenando por día y hora de creación.
 - **ls -t** muestra ordenando por día y hora de modificación.
 - **ls -r** muestra el directorio y lo ordena en orden inverso.
-- **ls subdir** muestra el contenido del subdirectorio subdir.
 
 ## Otros listados
 
@@ -104,7 +103,7 @@ ordenando inversamente por fechas.
 - Muchos comandos admite los caracteres de sustitución:
     - **\* que representa cualquier conjunto o secuencia de
 caracteres**
-    - y **? que representa cualquier carácter pero sólo uno**.
+    - **? que representa cualquier carácter pero sólo uno**.
 
 - Por ejemplo **ls \*.gif** muestra todos los nombres de
 ficheros que acaben en .gif y **ls file?** muestra todos
@@ -248,17 +247,7 @@ grep [-opcion] expresión_regular [referencia...]
 
 ## Opciones grep
 
-- **c**: escribe el número de las líneas que satisface la
-condición.
 - **i**: no se distinguen mayúsculas y minúsculas.
-- **l**: escribe los nombres de los ficheros que contienen
-líneas buscadas.
-- **n**: cada línea es precedida por su número en el fichero.
-
-## Mas opciones grep
-
-- **s**: no se vuelcan los mensajes que indican que un
-fichero no se puede abrir.
 - **v**: se muestran sólo las líneas que no satisfacen el
 criterio de selección.
 
@@ -319,29 +308,10 @@ se use el comando **nohup nombreprograma**. En este caso
 todas las salidas del programa se dirigen a un
 fichero llamado nohup.out.
 
-## Cambiar la prioridad
-
-- Para darle al programa la prioridad mínima habría
-que invocarlo con **nice -19 nombreprograma &**.
-
-- Para darle al programa la prioridad máxima habría
-que invocarlo con **nice --20 nombreprograma &**.
-
 ## Listado procesos
 
 - El comando **top** muestra una lista de los procesos
 que se están ejecutando.
-
-## Agrupación de ficheros
-
-- El comando **tar -cvf nombre_archivo.tar
-fichero1 fichero2 ...** agrupa varios ficheros en
-uno solo “archivo” tar
-
-## Compresión de ficheros
-
-- El comando **gzip fichero** comprime fichero
-(que es borrado) y se crea un fichero con nombre fichero.gz.
 
 ## Agrupación y compresión
 
@@ -419,11 +389,6 @@ momento, en qué terminal están y desde qué hora.
 
 - El comando **history** muestra los comandos usados por el usuario
 en orden cronológico.
-
-## Permisos por defecto
-
-- El comando **umask** muestra los permisos con los que el usuario
-creara sus archivos por defecto
 
 ## Versión kernel
 
