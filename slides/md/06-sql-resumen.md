@@ -1096,7 +1096,7 @@ una consulta a una tabla real:
 
 ~~~{.sql}
 CREATE VIEW nombre_vista [(lista_columnas)]
-AS (consulta) [WITH CHECK OPTION];
+AS consulta_sql [WITH CHECK OPTION];
 ~~~
 
 ## Borrar vistas
@@ -1133,11 +1133,11 @@ que tiene encargados el cliente, se
 definiría la vista:
 
 ~~~{.sql}
-CREATE VIEW pedidos_por_cliente (codigo_cliente, num_pedidos) AS (
+CREATE VIEW pedidos_por_cliente (codigo_cliente, num_pedidos) AS
   SELECT c.codigo_cliente, COUNT(\*)
   FROM pedidos p, clientes c
   WHERE p.codigo_cliente = c.codigo_cliente
-  GROUP BY c.codigo_cliente);
+  GROUP BY c.codigo_cliente;
 ~~~
 
 ## Vista pedidos por cliente

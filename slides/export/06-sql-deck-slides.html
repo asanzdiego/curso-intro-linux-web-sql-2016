@@ -1047,7 +1047,7 @@ numero_cuenta <span class="dt">CHAR</span>(<span class="dv">20</span>),
 <li>Una vista es una <strong>tabla ficticia</strong> que se construye a partir de una consulta a una tabla real:</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">CREATE</span> <span class="kw">VIEW</span> nombre_vista [(lista_columnas)]
-<span class="kw">AS</span> (consulta) [<span class="kw">WITH</span> <span class="kw">CHECK</span> <span class="kw">OPTION</span>];</code></pre></div>
+<span class="kw">AS</span> consulta [<span class="kw">WITH</span> <span class="kw">CHECK</span> <span class="kw">OPTION</span>];</code></pre></div>
 </section><section id="borrar-vistas" class="slide level2">
 <h2><span class="header-section-number">8.11</span> Borrar vistas</h2>
 <ul>
@@ -1079,11 +1079,11 @@ numero_cuenta <span class="dt">CHAR</span>(<span class="dv">20</span>),
 <ul>
 <li>Si se quiere crear una vista que indique para cada cliente el número de pedidos que tiene encargados el cliente, se definiría la vista:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">CREATE</span> <span class="kw">VIEW</span> pedidos_por_cliente (codigo_cliente, num_pedidos) <span class="kw">AS</span> (
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">CREATE</span> <span class="kw">VIEW</span> pedidos_por_cliente (codigo_cliente, num_pedidos) <span class="kw">AS</span>
   <span class="kw">SELECT</span> c.codigo_cliente, <span class="fu">COUNT</span>(\*)
   <span class="kw">FROM</span> pedidos p, clientes c
   <span class="kw">WHERE</span> p.codigo_cliente = c.codigo_cliente
-  <span class="kw">GROUP</span> <span class="kw">BY</span> c.codigo_cliente);</code></pre></div>
+  <span class="kw">GROUP</span> <span class="kw">BY</span> c.codigo_cliente;</code></pre></div>
 </section><section id="vista-pedidos-por-cliente" class="slide level2">
 <h2><span class="header-section-number">8.15</span> Vista pedidos por cliente</h2>
 <ul>

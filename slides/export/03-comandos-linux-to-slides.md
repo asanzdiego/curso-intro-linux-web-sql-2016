@@ -229,7 +229,7 @@ contenido de un fichero pantalla pantalla.
 
 ## Visualización con less
 
-- El comando **lessº filename** permite visualizar el
+- El comando **less filename** permite visualizar el
 contenido de un fichero pantalla pantalla.
 
 - Para pasar de pantalla se utilizan las flechas arriba y abajo.
